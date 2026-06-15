@@ -254,6 +254,458 @@
             background: #e5e7eb;
             border-radius: 4px;
         }
+
+        .cover-media-column {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .cover-media-column {
+                align-items: flex-end;
+            }
+        }
+
+        .action-rail {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.85rem;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .action-rail {
+                align-items: flex-end;
+                max-width: 21rem;
+            }
+        }
+
+        .download-action {
+            position: relative;
+            overflow: hidden;
+            display: block;
+            color: var(--text-main);
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid rgba(17, 17, 17, 0.08);
+            box-shadow: 0 18px 40px -28px rgba(17, 17, 17, 0.45);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+
+        .download-action::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(242, 107, 33, 0.14), rgba(242, 107, 33, 0.02) 58%, rgba(17, 17, 17, 0.02));
+            opacity: 0;
+            transform: scaleX(0.78) translateX(12%);
+            transform-origin: right center;
+            transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .download-action:hover,
+        .download-action:focus-visible {
+            transform: translateX(-8px);
+            border-color: rgba(242, 107, 33, 0.35);
+            box-shadow: 0 24px 48px -28px rgba(242, 107, 33, 0.4);
+        }
+
+        .download-action:hover::before,
+        .download-action:focus-visible::before {
+            opacity: 1;
+            transform: scaleX(1) translateX(0);
+        }
+
+        .download-action:active {
+            transform: translateX(-6px) scale(0.98);
+        }
+
+        .download-action:focus-visible {
+            outline: 2px solid rgba(242, 107, 33, 0.45);
+            outline-offset: 3px;
+        }
+
+        .resume-action,
+        .portfolio-action {
+            width: min(100%, 18rem);
+            padding: 1rem 1.1rem 1rem 1.2rem;
+            border-radius: 1.4rem;
+        }
+
+        .action-shell {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .action-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .action-kicker {
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .action-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .action-meta {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            transition: color 0.3s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .action-arrow {
+            width: 2.75rem;
+            height: 2.75rem;
+            flex-shrink: 0;
+            border-radius: 9999px;
+            background: rgba(17, 17, 17, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .action-arrow svg {
+            width: 1rem;
+            height: 1rem;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .action-line {
+            position: absolute;
+            left: 1.25rem;
+            right: 1.25rem;
+            bottom: 0.7rem;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(242, 107, 33, 0.45), rgba(242, 107, 33, 0));
+            transform: scaleX(0.28);
+            transform-origin: left center;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .download-action:hover .action-kicker,
+        .download-action:focus-visible .action-kicker {
+            color: var(--brand-orange);
+            transform: translateX(3px);
+        }
+
+        .download-action:hover .action-title,
+        .download-action:focus-visible .action-title {
+            transform: translateX(5px);
+        }
+
+        .download-action:hover .action-meta,
+        .download-action:focus-visible .action-meta {
+            color: #4b5563;
+            transform: translateX(5px);
+        }
+
+        .download-action:hover .action-arrow,
+        .download-action:focus-visible .action-arrow {
+            transform: translateX(4px) rotate(-8deg);
+            background-color: rgba(242, 107, 33, 0.14);
+        }
+
+        .download-action:hover .action-arrow svg,
+        .download-action:focus-visible .action-arrow svg {
+            transform: translate(1px, -1px);
+        }
+
+        .download-action:hover .action-line,
+        .download-action:focus-visible .action-line {
+            transform: scaleX(1);
+        }
+
+        .experience-list {
+            margin-top: 3rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .experience-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .experience-toggle {
+            width: 100%;
+            padding: 1.4rem 0;
+            background: transparent;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            text-align: left;
+            cursor: pointer;
+            color: var(--text-main);
+        }
+
+        .experience-toggle:focus-visible {
+            outline: 2px solid rgba(242, 107, 33, 0.4);
+            outline-offset: 6px;
+        }
+
+        .experience-summary {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .experience-company {
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            transition: color 0.3s ease;
+        }
+
+        .experience-meta {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .experience-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            flex-shrink: 0;
+            border-radius: 9999px;
+            border: 1px solid rgba(17, 17, 17, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .experience-icon svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .experience-toggle:hover .experience-company,
+        .experience-toggle[aria-expanded="true"] .experience-company {
+            color: var(--brand-orange);
+        }
+
+        .experience-toggle:hover .experience-icon,
+        .experience-toggle[aria-expanded="true"] .experience-icon {
+            border-color: rgba(242, 107, 33, 0.24);
+            color: var(--brand-orange);
+            background-color: rgba(242, 107, 33, 0.08);
+        }
+
+        .experience-toggle[aria-expanded="true"] .experience-icon {
+            transform: rotate(180deg);
+        }
+
+        .experience-panel {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                        opacity 0.25s ease;
+        }
+
+        .experience-panel.is-open {
+            opacity: 1;
+        }
+
+        .experience-panel-inner {
+            padding: 0 0 1.8rem;
+        }
+
+        .experience-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            color: var(--text-muted);
+        }
+
+        .experience-detail-label {
+            color: var(--text-main);
+            font-weight: 600;
+            margin-bottom: 0.45rem;
+        }
+
+        .experience-bullets {
+            display: grid;
+            gap: 0.9rem;
+            font-size: 1rem;
+            line-height: 1.85;
+        }
+
+        .project-note {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            max-width: 64ch;
+        }
+
+        .project-highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin-top: 1.75rem;
+        }
+
+        .project-highlight-card {
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            padding: 1.35rem 1.4rem;
+            background: #fafafa;
+        }
+
+        .project-highlight-label {
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            color: var(--brand-orange);
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .project-highlight-card p {
+            color: var(--text-muted);
+            line-height: 1.85;
+        }
+
+        .project-resource-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.9rem;
+            margin-top: 1.75rem;
+        }
+
+        .project-resource-link {
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem 1.1rem 1rem 1.2rem;
+            border: 1px solid rgba(17, 17, 17, 0.08);
+            border-radius: 1.15rem;
+            background: rgba(255, 255, 255, 0.96);
+            color: var(--text-main);
+            text-decoration: none;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .project-resource-link::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(242, 107, 33, 0.12), rgba(242, 107, 33, 0.02) 58%, rgba(17, 17, 17, 0.02));
+            opacity: 0;
+            transform: translateX(10%);
+            transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .project-resource-link:hover,
+        .project-resource-link:focus-visible {
+            transform: translateY(-2px);
+            border-color: rgba(242, 107, 33, 0.28);
+            box-shadow: 0 18px 36px -26px rgba(242, 107, 33, 0.38);
+        }
+
+        .project-resource-link:hover::before,
+        .project-resource-link:focus-visible::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .project-resource-link:focus-visible {
+            outline: 2px solid rgba(242, 107, 33, 0.4);
+            outline-offset: 3px;
+        }
+
+        .project-resource-copy,
+        .project-resource-arrow {
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-resource-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .project-resource-title {
+            font-size: 0.98rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .project-resource-meta {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .project-resource-arrow {
+            width: 2.4rem;
+            height: 2.4rem;
+            flex-shrink: 0;
+            border-radius: 9999px;
+            background: rgba(17, 17, 17, 0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .project-resource-link:hover .project-resource-arrow,
+        .project-resource-link:focus-visible .project-resource-arrow {
+            transform: translateX(4px) rotate(-10deg);
+            background-color: rgba(242, 107, 33, 0.14);
+        }
+
+        @media (min-width: 768px) {
+            .project-highlight-grid,
+            .project-resource-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .experience-detail-grid {
+                grid-template-columns: 0.9fr 1.4fr;
+                gap: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -276,7 +728,7 @@
             <nav class="sidebar-nav">
                 <a href="#cover" class="nav-item">Cover<span class="nav-number">00</span></a>
                 <a href="#education" class="nav-item">教育背景<span class="nav-number">01</span></a>
-                <a href="#experience" class="nav-item">职业足迹<span class="nav-number">02</span></a>
+                <a href="#experience" class="nav-item">工作经历<span class="nav-number">02</span></a>
                 <a href="#portfolio" class="nav-item">项目经验<span class="nav-number">03</span></a>
                 <a href="#operations" class="nav-item">运营数据<span class="nav-number">04</span></a>
                 <a href="#skills" class="nav-item">技能清单<span class="nav-number">05</span></a>
@@ -306,7 +758,46 @@
                     <h2 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tight">Personal<br>Portfolio</h2>
                 </div>
                 <div class="w-full md:w-1/2 flex md:justify-end justify-start">
-                     <img src="美式证件照2.jpg" onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'" alt="卢泓臻个人照片" class="w-48 sm:w-64 md:w-80 rounded-lg shadow-xl object-cover">
+                    <div class="cover-media-column">
+                        <img src="美式证件照2.jpg" onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'" alt="卢泓臻个人照片" class="w-48 sm:w-64 md:w-80 rounded-lg shadow-xl object-cover">
+                        <div class="action-rail" aria-label="下载资料">
+                            <a class="download-action resume-action" href="/downloads/luhongzhen-resume.pdf" aria-label="打开卢泓臻简历 PDF">
+                                <span class="action-shell">
+                                    <span class="action-copy">
+                                        <span class="action-kicker">Download Resume</span>
+                                        <span class="action-title">下载简历</span>
+                                        <span class="action-meta">点击打开 PDF，可在预览中下载</span>
+                                    </span>
+                                    <span class="action-arrow" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 4v11"></path>
+                                            <path d="M7 11.5 12 16.5 17 11.5"></path>
+                                            <path d="M5 20h14"></path>
+                                        </svg>
+                                    </span>
+                                </span>
+                                <span class="action-line" aria-hidden="true"></span>
+                            </a>
+
+                            <a class="download-action portfolio-action" href="/downloads/luhongzhen-portfolio.pdf" aria-label="打开卢泓臻作品集 PDF">
+                                <span class="action-shell">
+                                    <span class="action-copy">
+                                        <span class="action-kicker">Download Portfolio</span>
+                                        <span class="action-title">下载作品集</span>
+                                        <span class="action-meta">点击打开 PDF，可在预览中下载</span>
+                                    </span>
+                                    <span class="action-arrow" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M12 4v11"></path>
+                                            <path d="M7 11.5 12 16.5 17 11.5"></path>
+                                            <path d="M5 20h14"></path>
+                                        </svg>
+                                    </span>
+                                </span>
+                                <span class="action-line" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -342,45 +833,70 @@
         <section id="experience" class="content-section">
             <div class="section-header">
                 <div class="section-title-wrapper">
-                    <h2 class="section-title">职业足迹<sup>02</sup></h2>
+                    <h2 class="section-title">工作经历<sup>02</sup></h2>
                 </div>
                 <div class="section-desc-wrapper">
                     <p class="section-desc">在公关传播与舆情研究领域的深度实践，通过数据化监测与创意策划，构建品牌与受众之间的信任桥梁。</p>
                 </div>
             </div>
 
-            <!-- Internship 1 -->
-            <div class="mt-8 md:mt-12">
-                <div class="sub-header">
-                    <span class="sub-header-num">2a</span> 广州凡岛网络科技有限公司
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-8">
-                    <div class="lg:col-span-4 text-gray-500 mb-2 lg:mb-0">
-                        公共关系与品牌传播实习生<br>2025.06 - 2025.08
+            <div class="experience-list" aria-label="工作经历列表">
+                <div class="experience-item">
+                    <button class="experience-toggle" type="button" aria-expanded="false" aria-controls="experience-panel-fandao">
+                        <span class="experience-summary">
+                            <span class="experience-company">广州凡岛网络科技有限公司</span>
+                            <span class="experience-meta">公共关系与品牌传播实习生 · 2025.06 - 2025.08</span>
+                        </span>
+                        <span class="experience-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <div id="experience-panel-fandao" class="experience-panel" hidden>
+                        <div class="experience-panel-inner">
+                            <div class="experience-detail-grid">
+                                <div>
+                                    <p class="experience-detail-label">工作重心</p>
+                                    <p>围绕品牌投放、评论区策略和舆情监控三条主线，建立从内容筛选到数据回收的完整传播闭环。</p>
+                                </div>
+                                <div class="experience-bullets">
+                                    <p><strong>品牌投放：</strong>搭建并优化小红书品牌内容投放体系，主导 KOC 筛选、内容审核及数据回收闭环，实现月均 62 万以上阅读量，综合 CPM 优化至 18.8。</p>
+                                    <p><strong>评论铺设：</strong>设计并执行抖音平台高互动性评论文案与铺设策略，成功制造 30 余个千赞级热点，单条评论引爆 8 万点赞。</p>
+                                    <p><strong>活动策划：</strong>全流程参与品牌发布会等公关活动的策划与执行。参与核心传播物料的创意策划与撰写，并协助完成供应商联络、预算跟进、现场布置及礼品筹备等工作，保障活动在预算内高质量落地。</p>
+                                    <p><strong>舆情监控：</strong>建立并维护每日舆情看板，将品牌内容正面率稳定维持在 90% 以上，并参与品牌发布会等公关活动。</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="lg:col-span-8 space-y-4 text-lg">
-                        <p><strong>品牌投放：</strong>搭建并优化小红书品牌内容投放体系，主导KOC筛选、内容审核及数据回收闭环。实现月均62万+阅读量，综合CPM优化至18.8。</p>
-                        <p><strong>评论铺设：</strong>设计并执行抖音平台高互动性评论文案与铺设策略，成功制造30余个千赞级热点，单条评论引爆8万点赞。</p>
-                        <p><strong>舆情监控：</strong>建立并维护每日舆情看板，将品牌内容正面率稳定维持在90%以上。全流程参与品牌发布会等公关活动。</p>
-                    </div>
                 </div>
-            </div>
 
-            <div class="w-full h-px bg-gray-200 my-10 md:my-16"></div>
-
-            <!-- Internship 2 -->
-            <div>
-                <div class="sub-header mt-0 md:mt-0">
-                    <span class="sub-header-num">2b</span> 深圳媒体研究会
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-8">
-                    <div class="lg:col-span-4 text-gray-500 mb-2 lg:mb-0">
-                        舆情分析实习生<br>2025.12 - 2026.02
-                    </div>
-                    <div class="lg:col-span-8 space-y-4 text-lg">
-                        <p><strong>舆情监测：</strong>构建覆盖路透社、彭博社及国内全网的核心渠道监测体系，实现日均精准处理信息1000+条。</p>
-                        <p><strong>风险研判：</strong>建立快速响应机制，负面舆情预警压缩至30分钟以内。协助处置中高风险事件40余起，阻断负面传播链条。</p>
-                        <p><strong>情报分析：</strong>主导舆情日报、周报撰写，累计输出高价值报告100余份，为管理层提供决策支持。</p>
+                <div class="experience-item">
+                    <button class="experience-toggle" type="button" aria-expanded="false" aria-controls="experience-panel-media">
+                        <span class="experience-summary">
+                            <span class="experience-company">深圳媒体研究会</span>
+                            <span class="experience-meta">舆情分析实习生 · 2025.12 - 2026.02</span>
+                        </span>
+                        <span class="experience-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m6 9 6 6 6-6"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <div id="experience-panel-media" class="experience-panel" hidden>
+                        <div class="experience-panel-inner">
+                            <div class="experience-detail-grid">
+                                <div>
+                                    <p class="experience-detail-label">工作重心</p>
+                                    <p>覆盖媒体监测、风险预警和情报分析三类任务，把大量分散信息整理成可判断、可执行的舆情结论。</p>
+                                </div>
+                                <div class="experience-bullets">
+                                    <p><strong>舆情监测：</strong>构建覆盖路透社、彭博社及国内全网的核心渠道监测体系，实现日均精准处理信息 1000+ 条。</p>
+                                    <p><strong>风险研判：</strong>建立快速响应机制，负面舆情预警压缩至 30 分钟以内，协助处置中高风险事件 40 余起，阻断负面传播链条。</p>
+                                    <p><strong>情报分析：</strong>主导舆情日报、周报撰写，累计输出高价值报告 100 余份，为管理层提供决策支持。</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -393,14 +909,13 @@
                     <h2 class="section-title">项目经验<sup>03</sup></h2>
                 </div>
                 <div class="section-desc-wrapper">
-                    <p class="section-desc">结合品牌传播逻辑与用户心理学，输出具有高度破圈能力的视觉内容与文案创意。</p>
+                    <p class="section-desc">将工作经历中的代表成果与个人独立案例拆开展示，重点呈现项目背景、执行方法与最终结果。</p>
                 </div>
             </div>
 
             <div class="mt-8 md:mt-16">
-                <div class="sub-header">
-                    <span class="sub-header-num">3a</span> 日化产品营销
-                </div>
+                <p class="text-xs md:text-sm uppercase tracking-[0.18em] text-gray-500 mb-4">广州凡岛网络科技有限公司 · 在职项目成果</p>
+                <div class="sub-header">日化产品营销</div>
                 <div class="box-container flex items-center justify-center">
                     <img src="kono产品营销数据.jpg" onerror="this.src='https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'" alt="日化品牌营销案例图" class="w-full rounded-lg shadow-sm">
                 </div>
@@ -411,14 +926,84 @@
             </div>
             
             <div class="mt-12 md:mt-20">
-                <div class="sub-header">
-                    <span class="sub-header-num">3b</span> 小红书个人IP搭建
-                </div>
+                <p class="text-xs md:text-sm uppercase tracking-[0.18em] text-gray-500 mb-4">个人账号项目 · 自运营成果</p>
+                <div class="sub-header">小红书个人IP搭建</div>
                 <div class="box-container flex items-center justify-center overflow-hidden">
                     <img src="截屏 2026-04-22 14.39.22.jpg" onerror="this.src='https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'" alt="个人账号运营成果" class="w-full object-cover rounded-lg shadow-sm">
                 </div>
                 <div class="mt-6 md:mt-8 text-gray-600 max-w-4xl">
                     <p><strong>账号 @斜一下的至秦：</strong>从0到1孵化小红书校园生活类账号。完成239篇爆款笔记撰写，单篇最高阅读64万+。通过分析后台停留时长与转化率，不断优化内容方向，目前累计拥有1.9万+精准垂直粉丝，获赞与收藏总量超过50万+。</p>
+                </div>
+            </div>
+
+            <div class="mt-12 md:mt-20">
+                <p class="text-xs md:text-sm uppercase tracking-[0.18em] text-gray-500 mb-4">腾讯集团市场与公关部 · 培养专项成果</p>
+                <div class="sub-header">腾讯传播研习生培养专项「鹅创营」</div>
+                <p class="project-note">2026年04月 - 2026年06月 · 第3期学员。参与腾讯集团市场与公关部主办的传播研习生培养专项，完成 4 个传播策划实践课题作业，其中个人课题获评 A 级。</p>
+
+                <div class="project-highlight-grid">
+                    <article class="project-highlight-card">
+                        <span class="project-highlight-label">个人课题</span>
+                        <p>基于公开信息独立完成 QClaw 内容种草、腾讯广告创享会新闻稿传播、QQ闪传活动策划 3 个课题研究，最终获评 A 级，共四个等级，位列第二等级。</p>
+                    </article>
+                    <article class="project-highlight-card">
+                        <span class="project-highlight-label">小组课题</span>
+                        <p>与 6 名成员协作完成 Workbuddy 深度用户研究报告。本人负责“心智认知分析”模块，独立完成 2 场用户深度访谈及编码分析，整合小组调研数据，输出用户心智认知模型及关键洞察。</p>
+                    </article>
+                </div>
+
+                <div class="project-resource-grid" aria-label="鹅创营课题成果下载">
+                    <a class="project-resource-link" href="/downloads/qclaw-xiaohongshu-plan.pdf" aria-label="打开 QClaw 小红书种草传播方案 PDF">
+                        <span class="project-resource-copy">
+                            <span class="project-resource-title">QClaw 内容种草课题</span>
+                            <span class="project-resource-meta">下载 PDF · 小红书种草传播方案</span>
+                        </span>
+                        <span class="project-resource-arrow" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17 17 7"></path>
+                                <path d="M9 7h8v8"></path>
+                            </svg>
+                        </span>
+                    </a>
+
+                    <a class="project-resource-link" href="/downloads/tencent-news-release-plan.pdf" aria-label="打开 腾讯广告创享会新闻稿传播课题 PDF">
+                        <span class="project-resource-copy">
+                            <span class="project-resource-title">腾讯广告创享会新闻稿课题</span>
+                            <span class="project-resource-meta">下载 PDF · 新闻稿传播策划案</span>
+                        </span>
+                        <span class="project-resource-arrow" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17 17 7"></path>
+                                <path d="M9 7h8v8"></path>
+                            </svg>
+                        </span>
+                    </a>
+
+                    <a class="project-resource-link" href="/downloads/qq-file-campus-plan.pdf" aria-label="打开 QQ闪传活动策划课题 PDF">
+                        <span class="project-resource-copy">
+                            <span class="project-resource-title">QQ闪传校园话题课题</span>
+                            <span class="project-resource-meta">下载 PDF · 校园事件传播策划方案</span>
+                        </span>
+                        <span class="project-resource-arrow" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17 17 7"></path>
+                                <path d="M9 7h8v8"></path>
+                            </svg>
+                        </span>
+                    </a>
+
+                    <a class="project-resource-link" href="/downloads/workbuddy-user-research.pdf" aria-label="打开 Workbuddy 用户研究课题 PDF">
+                        <span class="project-resource-copy">
+                            <span class="project-resource-title">Workbuddy 用户研究课题</span>
+                            <span class="project-resource-meta">下载 PDF · 深度用户研究报告</span>
+                        </span>
+                        <span class="project-resource-arrow" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 17 17 7"></path>
+                                <path d="M9 7h8v8"></path>
+                            </svg>
+                        </span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -436,9 +1021,7 @@
 
             <div class="mt-10 md:mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
                 <div>
-                    <div class="sub-header mt-0">
-                        <span class="sub-header-num">4a</span> 评论区铺设战报
-                    </div>
+                    <div class="sub-header mt-0">评论区铺设战报</div>
                     <div class="flex flex-col gap-6 mt-6 md:mt-8">
                         <div class="border-l-4 border-orange-500 pl-4 md:pl-6">
                             <h3 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">18.4万+</h3>
@@ -455,9 +1038,7 @@
                 </div>
 
                 <div>
-                    <div class="sub-header mt-0">
-                        <span class="sub-header-num">4b</span> 商务合作矩阵
-                    </div>
+                    <div class="sub-header mt-0">商务合作矩阵</div>
                     <div class="mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <img src="IMG_6048.jpg" alt="商务合作明细1" class="w-full border border-gray-200 rounded-lg shadow-sm">
                         <img src="IMG_6049.jpg" alt="商务合作明细2" class="w-full border border-gray-200 rounded-lg shadow-sm">
@@ -486,7 +1067,7 @@
                         <span class="text-xl md:text-2xl font-bold">AI</span>
                     </div>
                     <h4 class="font-bold text-lg mb-2">AI 生产力</h4>
-                    <p class="text-gray-500">Gemini<br>ChatGPT<br>Deepseek<br>Coze工作流</p>
+                    <p class="text-gray-500">Codex<br>ChatGPT<br>Perplexity<br>Midjourney<br>Veo</p>
                 </div>
                 <div class="flex flex-col items-start sm:items-center text-left sm:text-center">
                     <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-gray-900 flex items-center justify-center mb-4 md:mb-6">
@@ -521,6 +1102,7 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
         const navItems = document.querySelectorAll('.nav-item');
+        const experienceToggles = document.querySelectorAll('.experience-toggle');
 
         // Toggle mobile menu
         mobileMenuBtn.addEventListener('click', () => {
@@ -543,6 +1125,41 @@
                 }
             });
         });
+
+        experienceToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const panelId = toggle.getAttribute('aria-controls');
+                const panel = panelId ? document.getElementById(panelId) : null;
+                const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+
+                experienceToggles.forEach(otherToggle => {
+                    const otherPanelId = otherToggle.getAttribute('aria-controls');
+                    const otherPanel = otherPanelId ? document.getElementById(otherPanelId) : null;
+
+                    otherToggle.setAttribute('aria-expanded', 'false');
+
+                    if (otherPanel) {
+                        otherPanel.style.maxHeight = '0px';
+                        otherPanel.classList.remove('is-open');
+                        window.setTimeout(() => {
+                            if (otherToggle.getAttribute('aria-expanded') === 'false') {
+                                otherPanel.hidden = true;
+                            }
+                        }, 450);
+                    }
+                });
+
+                if (!panel || isOpen) {
+                    return;
+                }
+
+                toggle.setAttribute('aria-expanded', 'true');
+                panel.hidden = false;
+                panel.classList.add('is-open');
+                panel.style.maxHeight = `${panel.scrollHeight}px`;
+            });
+        });
+
     });
 </script>
 
