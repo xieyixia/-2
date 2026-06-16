@@ -6,82 +6,193 @@
     <title>卢泓臻 - 个人作品集</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
         
         :root {
-            --brand-orange: #f26b21;
-            --text-main: #111111;
-            --text-muted: #6b7280;
-            --border-color: #e5e7eb;
+            --brand-orange: #ee8a27;
+            --text-main: #171217;
+            --text-muted: #7c7b79;
+            --border-color: rgba(68, 59, 48, 0.09);
+            --page-base: #f5f1ea;
+            --page-surface: rgba(255, 255, 255, 0.46);
+            --page-surface-strong: rgba(255, 255, 255, 0.72);
+            --page-ink: #201620;
+            --mist-dark: rgba(115, 111, 106, 0.18);
+            --mist-mid: rgba(162, 158, 153, 0.14);
+            --mist-light: rgba(210, 206, 200, 0.1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 7.5rem;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            position: relative;
+            min-height: 100dvh;
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             color: var(--text-main);
-            background-color: #ffffff;
+            background:
+                radial-gradient(circle at 50% -6%, rgba(255, 255, 255, 0.44), transparent 34%),
+                linear-gradient(180deg, rgba(248, 245, 240, 0.28) 0%, rgba(244, 240, 234, 0.38) 54%, rgba(247, 243, 238, 0.5) 100%);
             -webkit-font-smoothing: antialiased;
-            overflow: hidden; /* Prevent body scroll, let main scroll */
+            overflow-x: hidden;
+        }
+
+        body::before,
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        body::before {
+            background:
+                radial-gradient(circle at 18% 14%, rgba(255, 255, 255, 0.14), transparent 24%),
+                radial-gradient(circle at 82% 22%, rgba(255, 255, 255, 0.12), transparent 22%),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.04) 48%, rgba(255, 255, 255, 0.14) 100%);
+        }
+
+        body::after {
+            background:
+                radial-gradient(circle at 50% 16%, rgba(255, 255, 255, 0.08), transparent 18%),
+                radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.08), transparent 24%);
+        }
+
+        #grainient-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -3;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 18% 14%, rgba(255, 128, 18, 0.52), transparent 32%),
+                radial-gradient(circle at 80% 18%, rgba(255, 245, 221, 0.58), transparent 28%),
+                radial-gradient(circle at 76% 76%, rgba(201, 181, 255, 0.46), transparent 36%),
+                linear-gradient(180deg, #f8e6d7 0%, #f7ece1 54%, #f7efea 100%);
+        }
+
+        #grainient-bg canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
         }
 
         .layout-container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            width: 100vw;
+            min-height: 100dvh;
+            width: 100%;
         }
 
-        @media (min-width: 768px) {
-            .layout-container {
-                flex-direction: row;
+        .header-shell {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            padding: 0.9rem 0.9rem 0;
+        }
+
+        @media (min-width: 640px) {
+            .header-shell {
+                padding: 1rem 1.25rem 0;
             }
         }
 
-        /* Sidebar Styles */
+        /* Top Navigation */
         .sidebar {
-            flex-shrink: 0;
-            background-color: #ffffff;
-            z-index: 50;
+            max-width: 1440px;
+            margin: 0 auto;
             display: flex;
-            flex-direction: column;
-            border-bottom: 1px solid var(--border-color);
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.95rem 1rem;
+            border-radius: 1.35rem;
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.1) 100%);
+            backdrop-filter: blur(18px) saturate(138%);
+            -webkit-backdrop-filter: blur(18px) saturate(138%);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+            transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        backdrop-filter 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        @media (min-width: 768px) {
+        .sidebar.is-floating {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.14) 100%);
+            border-color: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(22px) saturate(155%);
+            -webkit-backdrop-filter: blur(22px) saturate(155%);
+            box-shadow: 0 22px 52px -38px rgba(17, 17, 17, 0.35),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.34);
+        }
+
+        @media (min-width: 640px) {
             .sidebar {
-                width: 280px;
-                border-bottom: none;
-                border-right: 1px solid var(--border-color);
+                padding: 1rem 1.4rem;
             }
         }
 
         .sidebar-logo {
-            padding: 1.5rem;
             font-weight: 700;
             font-size: 1.25rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            gap: 1rem;
+            flex-shrink: 0;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 640px) {
             .sidebar-logo {
-                padding: 2rem;
-                border-bottom: 1px solid var(--border-color);
+                font-size: 1.35rem;
+            }
+        }
+
+        .nav-cluster {
+            position: absolute;
+            top: calc(100% + 0.55rem);
+            left: 0.9rem;
+            right: 0.9rem;
+            padding: 0.8rem;
+            border-radius: 1.35rem;
+            background: rgba(255, 255, 255, 0.86);
+            border: 1px solid rgba(255, 255, 255, 0.62);
+            backdrop-filter: blur(20px) saturate(145%);
+            -webkit-backdrop-filter: blur(20px) saturate(145%);
+            box-shadow: 0 24px 50px -36px rgba(17, 17, 17, 0.34),
+                        inset 0 1px 0 rgba(255, 255, 255, 0.72);
+        }
+
+        @media (min-width: 640px) {
+            .nav-cluster {
+                position: static;
+                inset: auto;
+                width: auto;
+                padding: 0;
+                border-radius: 0;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
             }
         }
 
         .sidebar-nav {
-            padding: 1.5rem;
-            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 0.6rem;
         }
 
-        @media (min-width: 768px) {
+        @media (min-width: 640px) {
             .sidebar-nav {
-                padding: 2rem;
-                gap: 1rem;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 0.35rem;
             }
         }
 
@@ -90,23 +201,17 @@
             color: var(--text-main);
             text-decoration: none;
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             position: relative;
             overflow: hidden;
             isolation: isolate;
             width: fit-content;
-            padding: 0.45rem 0.8rem 0.5rem;
-            margin-left: -0.8rem;
-            border-radius: 0.95rem;
+            padding: 0.7rem 0.9rem;
+            border-radius: 999px;
             transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                         transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-            font-size: 1.125rem;
-        }
-
-        @media (min-width: 768px) {
-            .nav-item {
-                font-size: 1rem;
-            }
+            font-size: 1rem;
+            white-space: nowrap;
         }
 
         .nav-item::before {
@@ -121,13 +226,15 @@
         }
 
         .nav-item:hover,
-        .nav-item:focus-visible {
+        .nav-item:focus-visible,
+        .nav-item.is-active {
             color: #ffffff;
-            transform: translateX(4px);
+            transform: translateY(-1px);
         }
 
         .nav-item:hover::before,
-        .nav-item:focus-visible::before {
+        .nav-item:focus-visible::before,
+        .nav-item.is-active::before {
             transform: translateX(0);
         }
 
@@ -138,44 +245,41 @@
         .nav-number {
             font-size: 0.65rem;
             color: var(--text-muted);
-            margin-left: 4px;
+            margin-left: 0.35rem;
             font-weight: 400;
             transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                         transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .nav-item:hover .nav-number,
-        .nav-item:focus-visible .nav-number {
+        .nav-item:focus-visible .nav-number,
+        .nav-item.is-active .nav-number {
             color: rgba(255, 255, 255, 0.78);
             transform: translateX(2px);
         }
 
-        .sidebar-footer {
-            padding: 1.5rem;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.875rem;
-            color: var(--text-muted);
-            line-height: 1.8;
-        }
-
-        @media (min-width: 768px) {
-            .sidebar-footer {
-                padding: 2rem;
-            }
-        }
-
         /* Main Content Styles */
         .main-content {
-            flex-grow: 1;
-            overflow-y: auto;
-            scroll-behavior: smooth;
             position: relative;
+            isolation: isolate;
+            background: transparent;
+        }
+
+        .main-content::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(180deg, rgba(255, 251, 246, 0.03) 0%, rgba(255, 251, 246, 0.07) 22%, rgba(250, 244, 237, 0.12) 48%, rgba(248, 241, 232, 0.18) 76%, rgba(248, 241, 232, 0.24) 100%);
+            z-index: -1;
         }
 
         /* Section Layouts */
         .content-section {
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: none;
             padding: 4rem 1.5rem;
+            scroll-margin-top: 7.5rem;
+            background: transparent;
         }
 
         @media (min-width: 768px) {
@@ -262,16 +366,205 @@
             font-weight: 400;
         }
 
-        /* Hero Gradient matching the reference */
+        .cover-section {
+            position: relative;
+            overflow: clip;
+            padding-top: clamp(5rem, 8vw, 7rem);
+            padding-bottom: clamp(4rem, 7vw, 6rem);
+            background: transparent;
+            scroll-margin-top: 7.5rem;
+        }
+
+        .cover-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 36%, rgba(255, 255, 255, 0.1) 100%);
+            pointer-events: none;
+        }
+
         .hero-gradient {
-            background: linear-gradient(135deg, #c4d7e0 0%, #e2d2ba 40%, #ee9e55 70%, #eb6f25 100%);
+            position: relative;
+            isolation: isolate;
+            width: min(100%, 1160px);
+            margin: 0 auto;
+            min-height: clamp(31rem, 72vh, 43rem);
+            padding: 0;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+        }
+
+        .hero-gradient > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover-hero-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+            min-height: inherit;
+            padding: clamp(2rem, 3vw, 2.6rem);
+        }
+
+        .cover-hero-copy {
+            display: flex;
+            align-items: flex-start;
+            min-height: 0;
+            padding: clamp(1rem, 2vw, 2rem) 0 0;
+        }
+
+        .cover-copy-stack {
+            display: grid;
+            gap: clamp(0.75rem, 1.7vw, 1.3rem);
+            width: min(100%, 31rem);
+        }
+
+        .cover-name {
+            margin: 0;
+            font-size: clamp(3.1rem, 7.6vw, 6.2rem);
+            font-weight: 700;
+            letter-spacing: -0.06em;
+            line-height: 0.9;
+            color: rgba(20, 18, 20, 0.98);
+            text-wrap: balance;
+        }
+
+        .cover-display-title {
+            margin: 0;
+            font-size: clamp(2.8rem, 7.4vw, 5.8rem);
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            line-height: 0.88;
+            color: rgba(12, 12, 14, 0.98);
+            text-wrap: balance;
+        }
+
+        .cover-display-title span {
+            display: block;
+        }
+
+        .cover-hero-side {
+            width: min(100%, 34rem);
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1.35rem;
+        }
+
+        .cover-portrait-card {
+            width: 100%;
+            padding: 0;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 1.2rem;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 24px 44px -34px rgba(17, 17, 17, 0.3);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .cover-portrait-card img {
+            width: 100%;
+            border-radius: 1rem;
+            display: block;
+            aspect-ratio: 2 / 3;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .cover-downloads {
+            width: 100%;
+            align-items: stretch;
+            max-width: 22rem;
+        }
+
+        .cover-downloads .download-action {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.26) 0%, rgba(255, 255, 255, 0.14) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow:
+                0 18px 40px -30px rgba(17, 17, 17, 0.24),
+                inset 0 1px 0 rgba(255, 255, 255, 0.42);
+            backdrop-filter: blur(24px) saturate(135%);
+            -webkit-backdrop-filter: blur(24px) saturate(135%);
+        }
+
+        .cover-downloads .download-action::before {
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.02) 42%, rgba(242, 107, 33, 0.07) 100%);
+            opacity: 1;
+            transform: none;
+        }
+
+        .cover-downloads .download-action:hover,
+        .cover-downloads .download-action:focus-visible {
+            border-color: rgba(255, 255, 255, 0.42);
+            box-shadow:
+                0 22px 46px -30px rgba(17, 17, 17, 0.28),
+                inset 0 1px 0 rgba(255, 255, 255, 0.52);
+        }
+
+        .cover-downloads .action-arrow {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .cover-downloads .resume-action,
+        .cover-downloads .portfolio-action {
+            width: 100%;
+        }
+
+        @media (min-width: 900px) {
+            .hero-gradient {
+                min-height: calc(100dvh - 8.5rem);
+            }
+
+            .cover-hero-layout {
+                grid-template-columns: minmax(0, 1.2fr) minmax(20rem, 0.8fr);
+                gap: clamp(2rem, 4vw, 4rem);
+                align-items: center;
+                padding: clamp(2rem, 3.2vw, 2.8rem) clamp(1.8rem, 3vw, 2.6rem);
+            }
+
+            .cover-hero-copy {
+                align-self: center;
+                align-items: flex-start;
+                padding: clamp(1.25rem, 3.2vh, 2.2rem) 0 clamp(1.25rem, 3.2vh, 2.2rem) clamp(0.85rem, 2vw, 1.55rem);
+            }
+
+            .cover-downloads {
+                margin-top: clamp(0.35rem, 1vw, 0.7rem);
+                max-width: 20.5rem;
+            }
+        }
+
+        @media (max-width: 899px) {
+            .cover-hero-copy {
+                order: 1;
+            }
+
+            .cover-hero-side {
+                order: 2;
+                width: min(100%, 22rem);
+                margin: 0 auto;
+            }
         }
         
         .box-container {
-            background-color: #f3f4f6;
+            background: rgba(255, 255, 255, 0.52);
             padding: 1.5rem;
-            border-radius: 0.5rem;
+            border-radius: 0.9rem;
             margin-top: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.42);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         @media (min-width: 768px) {
@@ -279,6 +572,29 @@
                 padding: 3rem;
                 margin-top: 2rem;
             }
+        }
+
+        .education-card {
+            border-radius: 1.4rem;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0.2) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.36);
+            box-shadow:
+                0 16px 34px -28px rgba(17, 17, 17, 0.26),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(24px) saturate(135%);
+            -webkit-backdrop-filter: blur(24px) saturate(135%);
+        }
+
+        .education-card h4 {
+            color: #58677b;
+        }
+
+        .education-card p {
+            color: #66758a;
+        }
+
+        .education-card .education-date {
+            color: #8aa0bc;
         }
 
         /* Hide scrollbar for a cleaner look but keep functionality */
@@ -291,20 +607,6 @@
         .main-content::-webkit-scrollbar-thumb {
             background: #e5e7eb;
             border-radius: 4px;
-        }
-
-        .cover-media-column {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1rem;
-            width: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .cover-media-column {
-                align-items: flex-end;
-            }
         }
 
         .action-rail {
@@ -353,7 +655,7 @@
 
         .download-action:hover,
         .download-action:focus-visible {
-            transform: translateX(-8px);
+            transform: translateY(-4px);
             border-color: rgba(242, 107, 33, 0.35);
             box-shadow: 0 24px 48px -28px rgba(242, 107, 33, 0.4);
         }
@@ -365,7 +667,7 @@
         }
 
         .download-action:active {
-            transform: translateX(-6px) scale(0.98);
+            transform: translateY(-2px) scale(0.98);
         }
 
         .download-action:focus-visible {
@@ -618,7 +920,7 @@
             border: 1px solid var(--border-color);
             border-radius: 1.25rem;
             padding: 1.35rem 1.4rem;
-            background: #fafafa;
+            background: rgba(255, 255, 255, 0.48);
         }
 
         .project-highlight-label {
@@ -650,23 +952,30 @@
             justify-content: space-between;
             gap: 1rem;
             padding: 1rem 1.1rem 1rem 1.2rem;
-            border: 1px solid rgba(17, 17, 17, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.38);
             border-radius: 1.15rem;
-            background: rgba(255, 255, 255, 0.96);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.34) 0%, rgba(255, 255, 255, 0.22) 100%);
+            box-shadow:
+                0 18px 40px -28px rgba(17, 17, 17, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(24px) saturate(135%);
+            -webkit-backdrop-filter: blur(24px) saturate(135%);
             color: var(--text-main);
             text-decoration: none;
             transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                         border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+                        box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                        background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .project-resource-link::before {
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(242, 107, 33, 0.12), rgba(242, 107, 33, 0.02) 58%, rgba(17, 17, 17, 0.02));
-            opacity: 0;
-            transform: translateX(10%);
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04) 42%, rgba(242, 107, 33, 0.1) 100%);
+            opacity: 1;
+            transform: none;
             transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                         transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -674,14 +983,16 @@
         .project-resource-link:hover,
         .project-resource-link:focus-visible {
             transform: translateY(-2px);
-            border-color: rgba(242, 107, 33, 0.28);
-            box-shadow: 0 18px 36px -26px rgba(242, 107, 33, 0.38);
+            border-color: rgba(255, 255, 255, 0.52);
+            box-shadow:
+                0 22px 46px -28px rgba(17, 17, 17, 0.34),
+                inset 0 1px 0 rgba(255, 255, 255, 0.62);
         }
 
         .project-resource-link:hover::before,
         .project-resource-link:focus-visible::before {
             opacity: 1;
-            transform: translateX(0);
+            transform: none;
         }
 
         .project-resource-link:focus-visible {
@@ -717,7 +1028,11 @@
             height: 2.4rem;
             flex-shrink: 0;
             border-radius: 9999px;
-            background: rgba(17, 17, 17, 0.04);
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -728,7 +1043,7 @@
         .project-resource-link:hover .project-resource-arrow,
         .project-resource-link:focus-visible .project-resource-arrow {
             transform: translateX(4px) rotate(-10deg);
-            background-color: rgba(242, 107, 33, 0.14);
+            background-color: rgba(255, 255, 255, 0.26);
         }
 
         @media (min-width: 768px) {
@@ -744,96 +1059,155 @@
                 gap: 2rem;
             }
         }
-    </style>
+
+        .contact-section {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(246, 243, 238, 0.42) 100%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.1rem;
+            margin-top: 2.5rem;
+        }
+
+        .contact-intro {
+            color: var(--text-muted);
+            line-height: 1.9;
+            max-width: 60ch;
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 0.95rem;
+        }
+
+        .contact-card {
+            border-radius: 1rem;
+            padding: 1.1rem 1.2rem;
+            border: 1px solid rgba(17, 17, 17, 0.08);
+            background: rgba(255, 255, 255, 0.78);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72);
+        }
+
+        .contact-label {
+            display: block;
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-value {
+            color: var(--text-main);
+            font-size: 1.15rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            text-decoration: none;
+        }
+
+        .contact-value:hover,
+        .contact-value:focus-visible {
+            color: var(--brand-orange);
+        }
+
+        @media (min-width: 900px) {
+            .contact-grid {
+                grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+                align-items: start;
+                gap: 2rem;
+            }
+        }
+</style>
 </head>
 <body>
 
-<div class="layout-container">
-    <!-- Sidebar / Top Nav on Mobile -->
-    <aside class="sidebar transition-all duration-300">
-        <div class="sidebar-logo">
-            <span class="tracking-tight">LuHongZhen</span>
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden p-2 -mr-2 text-gray-900 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-        
-        <!-- Collapsible Menu Area -->
-        <div id="mobile-menu" class="hidden md:flex flex-col flex-grow absolute md:relative top-[73px] md:top-0 left-0 w-full md:w-auto h-[calc(100vh-73px)] md:h-auto bg-white overflow-y-auto md:overflow-visible">
-            <nav class="sidebar-nav">
-                <a href="#cover" class="nav-item">Cover<span class="nav-number">00</span></a>
-                <a href="#education" class="nav-item">教育背景<span class="nav-number">01</span></a>
-                <a href="#experience" class="nav-item">工作经历<span class="nav-number">02</span></a>
-                <a href="#portfolio" class="nav-item">项目经验<span class="nav-number">03</span></a>
-                <a href="#operations" class="nav-item">运营数据<span class="nav-number">04</span></a>
-                <a href="#skills" class="nav-item">技能清单<span class="nav-number">05</span></a>
-            </nav>
-            <div class="sidebar-footer space-y-2">
-                <span class="block">邮箱：18922028036@163.com</span>
-                <span class="block">微信：2314138946</span>
-                <span class="block">手机号：18922028036</span>
-            </div>
-        </div>
-    </aside>
+<div id="grainient-bg" aria-hidden="true"></div>
 
+<div class="layout-container">
     <!-- Main Content Area -->
     <main class="main-content">
+        <div class="header-shell">
+            <aside id="site-header" class="sidebar transition-all duration-300">
+                <div class="sidebar-logo">
+                    <span class="tracking-tight">LuHongZhen</span>
+                    <button id="mobile-menu-btn" class="sm:hidden p-2 -mr-2 text-gray-900 focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="打开导航菜单">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div id="mobile-menu" class="nav-cluster hidden sm:flex">
+                    <nav class="sidebar-nav" aria-label="页面导航">
+                        <a href="#cover" class="nav-item">Cover<span class="nav-number">00</span></a>
+                        <a href="#education" class="nav-item">教育背景<span class="nav-number">01</span></a>
+                        <a href="#experience" class="nav-item">工作经历<span class="nav-number">02</span></a>
+                        <a href="#portfolio" class="nav-item">项目经验<span class="nav-number">03</span></a>
+                        <a href="#operations" class="nav-item">运营数据<span class="nav-number">04</span></a>
+                        <a href="#skills" class="nav-item">技能清单<span class="nav-number">05</span></a>
+                        <a href="#contact" class="nav-item">联系我<span class="nav-number">06</span></a>
+                    </nav>
+                </div>
+            </aside>
+        </div>
         
         <!-- Hero Cover Section -->
-        <section id="cover" class="border-b border-gray-200">
-            <!-- Gradient Image Area -->
-            <div class="hero-gradient w-full h-[40vh] md:h-[60vh] flex items-center justify-center p-6 md:p-8">
-                <h1 class="text-white text-5xl md:text-8xl font-bold tracking-tight drop-shadow-sm flex items-center gap-4">
-                    卢泓臻
-                </h1>
-            </div>
-            <!-- Cover Text Area -->
-            <div class="px-6 md:px-16 py-12 md:py-24 flex flex-col md:flex-row gap-8 md:gap-12 justify-between items-start md:items-center">
-                <div class="md:w-1/2 flex justify-start">
-                    <h2 class="text-5xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tight">Personal<br>Portfolio</h2>
-                </div>
-                <div class="w-full md:w-1/2 flex md:justify-end justify-start">
-                    <div class="cover-media-column">
-                        <img src="美式证件照2.jpg" onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'" alt="卢泓臻个人照片" class="w-48 sm:w-64 md:w-80 rounded-lg shadow-xl object-cover">
-                        <div class="action-rail" aria-label="下载资料">
-                            <a class="download-action resume-action" href="https://raw.githubusercontent.com/xieyixia/-2/main/downloads/luhongzhen-resume.pdf" download="卢泓臻-简历.pdf" aria-label="打开卢泓臻简历 PDF">
-                                <span class="action-shell">
-                                    <span class="action-copy">
-                                        <span class="action-kicker">Download Resume</span>
-                                        <span class="action-title">下载简历</span>
-                                        <span class="action-meta">点击打开 PDF，可在预览中下载</span>
+        <section id="cover" class="cover-section">
+            <div class="hero-gradient">
+                <div class="cover-hero-layout">
+                    <div class="cover-hero-copy">
+                        <div class="cover-copy-stack">
+                            <p class="cover-name">卢泓臻</p>
+                            <h1 class="cover-display-title" aria-label="Personal Portfolio">
+                                <span>Personal</span>
+                                <span>Portfolio</span>
+                            </h1>
+                            <div class="action-rail cover-downloads" aria-label="下载资料">
+                                <a class="download-action resume-action" href="https://raw.githubusercontent.com/xieyixia/-2/main/downloads/luhongzhen-resume.pdf" download="卢泓臻-简历.pdf" aria-label="打开卢泓臻简历 PDF">
+                                    <span class="action-shell">
+                                        <span class="action-copy">
+                                            <span class="action-kicker">Download Resume</span>
+                                            <span class="action-title">下载简历</span>
+                                            <span class="action-meta">点击打开 PDF，可在预览中下载</span>
+                                        </span>
+                                        <span class="action-arrow" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M12 4v11"></path>
+                                                <path d="M7 11.5 12 16.5 17 11.5"></path>
+                                                <path d="M5 20h14"></path>
+                                            </svg>
+                                        </span>
                                     </span>
-                                    <span class="action-arrow" aria-hidden="true">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M12 4v11"></path>
-                                            <path d="M7 11.5 12 16.5 17 11.5"></path>
-                                            <path d="M5 20h14"></path>
-                                        </svg>
-                                    </span>
-                                </span>
-                                <span class="action-line" aria-hidden="true"></span>
-                            </a>
+                                    <span class="action-line" aria-hidden="true"></span>
+                                </a>
 
-                            <a class="download-action portfolio-action" href="https://raw.githubusercontent.com/xieyixia/-2/main/downloads/luhongzhen-portfolio.pdf" download="卢泓臻-作品集.pdf" aria-label="打开卢泓臻作品集 PDF">
-                                <span class="action-shell">
-                                    <span class="action-copy">
-                                        <span class="action-kicker">Download Portfolio</span>
-                                        <span class="action-title">下载作品集</span>
-                                        <span class="action-meta">点击打开 PDF，可在预览中下载</span>
+                                <a class="download-action portfolio-action" href="https://raw.githubusercontent.com/xieyixia/-2/main/downloads/luhongzhen-portfolio.pdf" download="卢泓臻-作品集.pdf" aria-label="打开卢泓臻作品集 PDF">
+                                    <span class="action-shell">
+                                        <span class="action-copy">
+                                            <span class="action-kicker">Download Portfolio</span>
+                                            <span class="action-title">下载作品集</span>
+                                            <span class="action-meta">点击打开 PDF，可在预览中下载</span>
+                                        </span>
+                                        <span class="action-arrow" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M12 4v11"></path>
+                                                <path d="M7 11.5 12 16.5 17 11.5"></path>
+                                                <path d="M5 20h14"></path>
+                                            </svg>
+                                        </span>
                                     </span>
-                                    <span class="action-arrow" aria-hidden="true">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                            <path d="M12 4v11"></path>
-                                            <path d="M7 11.5 12 16.5 17 11.5"></path>
-                                            <path d="M5 20h14"></path>
-                                        </svg>
-                                    </span>
-                                </span>
-                                <span class="action-line" aria-hidden="true"></span>
-                            </a>
+                                    <span class="action-line" aria-hidden="true"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cover-hero-side">
+                        <div class="cover-portrait-card">
+                            <img src="美式证件照2.jpg" onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'" alt="卢泓臻个人照片">
                         </div>
                     </div>
                 </div>
@@ -852,17 +1226,17 @@
             </div>
             
             <div class="mt-10 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                <div class="border border-gray-200 p-8 md:p-10">
+                <div class="education-card p-8 md:p-10">
                     <h4 class="text-sm text-gray-500 font-semibold mb-3">山东大学 · 硕士</h4>
                     <h3 class="text-3xl font-bold mb-4">宗教学</h3>
                     <p class="text-gray-600 mb-8">主修课程：社会调查方法、宗教学概论</p>
-                    <p class="text-sm text-gray-400">2025.09 - 2028.06</p>
+                    <p class="education-date text-sm text-gray-400">2025.09 - 2028.06</p>
                 </div>
-                <div class="border border-gray-200 p-8 md:p-10">
+                <div class="education-card p-8 md:p-10">
                     <h4 class="text-sm text-gray-500 font-semibold mb-3">山东大学 · 本科</h4>
                     <h3 class="text-3xl font-bold mb-4">哲学</h3>
                     <p class="text-gray-600 mb-8">荣誉：23年全国英语竞赛三等奖，24年全国英语竞赛二等奖。CET-6 (613分)</p>
-                    <p class="text-sm text-gray-400">2022.09 - 2026.06</p>
+                    <p class="education-date text-sm text-gray-400">2022.09 - 2026.06</p>
                 </div>
             </div>
         </section>
@@ -1131,37 +1505,390 @@
             </div>
         </section>
 
+        <section id="contact" class="content-section contact-section">
+            <div class="section-header">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">联系我<sup>06</sup></h2>
+                </div>
+                <div class="section-desc-wrapper">
+                    <p class="section-desc">如果你希望进一步了解我的项目经历、传播策略能力或合作方式，可以通过以下方式直接联系我。</p>
+                </div>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-intro">
+                    <p>我目前聚焦于品牌传播、公关策划、舆情分析与内容增长方向的机会，也欢迎围绕实习、校招、合作项目与作品交流展开沟通。</p>
+                </div>
+                <div class="contact-list" aria-label="联系方式">
+                    <div class="contact-card">
+                        <span class="contact-label">邮箱</span>
+                        <a class="contact-value" href="mailto:18922028036@163.com">18922028036@163.com</a>
+                    </div>
+                    <div class="contact-card">
+                        <span class="contact-label">微信</span>
+                        <span class="contact-value">2314138946</span>
+                    </div>
+                    <div class="contact-card">
+                        <span class="contact-label">手机号</span>
+                        <a class="contact-value" href="tel:18922028036">18922028036</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 </div>
 
+<script type="module">
+    import { Renderer, Program, Mesh, Triangle } from 'https://esm.sh/ogl@1.0.11';
+
+    const vertex = `#version 300 es
+    in vec2 position;
+    void main() {
+      gl_Position = vec4(position, 0.0, 1.0);
+    }
+    `;
+
+    const fragment = `#version 300 es
+    precision highp float;
+    uniform vec2 iResolution;
+    uniform float iTime;
+    uniform float uTimeSpeed;
+    uniform float uColorBalance;
+    uniform float uWarpStrength;
+    uniform float uWarpFrequency;
+    uniform float uWarpSpeed;
+    uniform float uWarpAmplitude;
+    uniform float uBlendAngle;
+    uniform float uBlendSoftness;
+    uniform float uRotationAmount;
+    uniform float uNoiseScale;
+    uniform float uGrainAmount;
+    uniform float uGrainScale;
+    uniform float uGrainAnimated;
+    uniform float uContrast;
+    uniform float uGamma;
+    uniform float uSaturation;
+    uniform vec2 uCenterOffset;
+    uniform float uZoom;
+    uniform vec3 uColor1;
+    uniform vec3 uColor2;
+    uniform vec3 uColor3;
+    out vec4 fragColor;
+    #define S(a,b,t) smoothstep(a,b,t)
+    mat2 Rot(float a){float s=sin(a),c=cos(a);return mat2(c,-s,s,c);}
+    vec2 hash(vec2 p){p=vec2(dot(p,vec2(2127.1,81.17)),dot(p,vec2(1269.5,283.37)));return fract(sin(p)*43758.5453);}
+    float noise(vec2 p){vec2 i=floor(p),f=fract(p),u=f*f*(3.0-2.0*f);float n=mix(mix(dot(-1.0+2.0*hash(i+vec2(0.0,0.0)),f-vec2(0.0,0.0)),dot(-1.0+2.0*hash(i+vec2(1.0,0.0)),f-vec2(1.0,0.0)),u.x),mix(dot(-1.0+2.0*hash(i+vec2(0.0,1.0)),f-vec2(0.0,1.0)),dot(-1.0+2.0*hash(i+vec2(1.0,1.0)),f-vec2(1.0,1.0)),u.x),u.y);return 0.5+0.5*n;}
+    void mainImage(out vec4 o, vec2 C){
+      float t=iTime*uTimeSpeed;
+      vec2 uv=C/iResolution.xy;
+      float ratio=iResolution.x/iResolution.y;
+      vec2 tuv=uv-0.5+uCenterOffset;
+      tuv/=max(uZoom,0.001);
+
+      float degree=noise(vec2(t*0.1,tuv.x*tuv.y)*uNoiseScale);
+      tuv.y*=1.0/ratio;
+      tuv*=Rot(radians((degree-0.5)*uRotationAmount+180.0));
+      tuv.y*=ratio;
+
+      float frequency=uWarpFrequency;
+      float ws=max(uWarpStrength,0.001);
+      float amplitude=uWarpAmplitude/ws;
+      float warpTime=t*uWarpSpeed;
+      tuv.x+=sin(tuv.y*frequency+warpTime)/amplitude;
+      tuv.y+=sin(tuv.x*(frequency*1.5)+warpTime)/(amplitude*0.5);
+
+      vec3 colLight=uColor1;
+      vec3 colCream=uColor2;
+      vec3 colDeep=uColor3;
+      float b=uColorBalance;
+      float s=max(uBlendSoftness,0.0);
+      mat2 blendRot=Rot(radians(uBlendAngle));
+      float blendX=(tuv*blendRot).x;
+      float edge0=-0.3-b-s;
+      float edge1=0.2-b+s;
+      float v0=0.5-b+s;
+      float v1=-0.3-b-s;
+      vec3 layer1=mix(colDeep,colCream,S(edge0,edge1,blendX));
+      vec3 layer2=mix(colCream,colLight,S(edge0,edge1,blendX));
+      vec3 col=mix(layer1,layer2,S(v0,v1,tuv.y));
+
+      vec2 grainUv=uv*max(uGrainScale,0.001);
+      if(uGrainAnimated>0.5){grainUv+=vec2(iTime*0.05);}
+      float grain=fract(sin(dot(grainUv,vec2(12.9898,78.233)))*43758.5453);
+      col+=(grain-0.5)*uGrainAmount;
+
+      col=(col-0.5)*uContrast+0.5;
+      float luma=dot(col,vec3(0.2126,0.7152,0.0722));
+      col=mix(vec3(luma),col,uSaturation);
+      col=pow(max(col,0.0),vec3(1.0/max(uGamma,0.001)));
+      col=clamp(col,0.0,1.0);
+
+      o=vec4(col,1.0);
+    }
+    void main(){
+      vec4 o=vec4(0.0);
+      mainImage(o,gl_FragCoord.xy);
+      fragColor=o;
+    }
+    `;
+
+    const hexToRgb = hex => {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        if (!result) return [1, 1, 1];
+        return [
+            parseInt(result[1], 16) / 255,
+            parseInt(result[2], 16) / 255,
+            parseInt(result[3], 16) / 255
+        ];
+    };
+
+    class GrainientBackground {
+        constructor(container, options) {
+            this.container = container;
+            this.options = options;
+            this.raf = 0;
+            this.visible = !document.hidden;
+            this.intersecting = true;
+            this.init();
+        }
+
+        init() {
+            this.renderer = new Renderer({
+                webgl: 2,
+                alpha: true,
+                antialias: false,
+                dpr: Math.min(window.devicePixelRatio || 1, 2)
+            });
+
+            const gl = this.renderer.gl;
+            this.gl = gl;
+            gl.canvas.style.width = '100%';
+            gl.canvas.style.height = '100%';
+            gl.canvas.style.display = 'block';
+            this.container.appendChild(gl.canvas);
+
+            const geometry = new Triangle(gl);
+            this.program = new Program(gl, {
+                vertex,
+                fragment,
+                uniforms: {
+                    iTime: { value: 0 },
+                    iResolution: { value: new Float32Array([1, 1]) },
+                    uTimeSpeed: { value: 0.85 },
+                    uColorBalance: { value: 0.0 },
+                    uWarpStrength: { value: 0.9 },
+                    uWarpFrequency: { value: 4.2 },
+                    uWarpSpeed: { value: 1.45 },
+                    uWarpAmplitude: { value: 52.0 },
+                    uBlendAngle: { value: -18.0 },
+                    uBlendSoftness: { value: 0.22 },
+                    uRotationAmount: { value: 220.0 },
+                    uNoiseScale: { value: 1.3 },
+                    uGrainAmount: { value: 0.09 },
+                    uGrainScale: { value: 1.65 },
+                    uGrainAnimated: { value: 1.0 },
+                    uContrast: { value: 1.08 },
+                    uGamma: { value: 1.0 },
+                    uSaturation: { value: 0.92 },
+                    uCenterOffset: { value: new Float32Array([0.02, -0.05]) },
+                    uZoom: { value: 1.05 },
+                    uColor1: { value: new Float32Array([1, 1, 1]) },
+                    uColor2: { value: new Float32Array([1, 1, 1]) },
+                    uColor3: { value: new Float32Array([1, 1, 1]) }
+                }
+            });
+
+            this.mesh = new Mesh(gl, { geometry, program: this.program });
+            this.updateOptions(this.options);
+            this.resize();
+
+            this.resizeObserver = new ResizeObserver(() => this.resize());
+            this.resizeObserver.observe(this.container);
+
+            this.intersectionObserver = new IntersectionObserver(([entry]) => {
+                this.intersecting = entry.isIntersecting;
+                this.toggleAnimation();
+            }, { threshold: 0 });
+            this.intersectionObserver.observe(this.container);
+
+            this.onVisibilityChange = () => {
+                this.visible = !document.hidden;
+                this.toggleAnimation();
+            };
+            document.addEventListener('visibilitychange', this.onVisibilityChange);
+
+            this.timeOrigin = performance.now();
+            this.toggleAnimation();
+        }
+
+        updateOptions(options) {
+            const uniforms = this.program.uniforms;
+            uniforms.uTimeSpeed.value = options.timeSpeed;
+            uniforms.uColorBalance.value = options.colorBalance;
+            uniforms.uWarpStrength.value = options.warpStrength;
+            uniforms.uWarpFrequency.value = options.warpFrequency;
+            uniforms.uWarpSpeed.value = options.warpSpeed;
+            uniforms.uWarpAmplitude.value = options.warpAmplitude;
+            uniforms.uBlendAngle.value = options.blendAngle;
+            uniforms.uBlendSoftness.value = options.blendSoftness;
+            uniforms.uRotationAmount.value = options.rotationAmount;
+            uniforms.uNoiseScale.value = options.noiseScale;
+            uniforms.uGrainAmount.value = options.grainAmount;
+            uniforms.uGrainScale.value = options.grainScale;
+            uniforms.uGrainAnimated.value = options.grainAnimated ? 1.0 : 0.0;
+            uniforms.uContrast.value = options.contrast;
+            uniforms.uGamma.value = options.gamma;
+            uniforms.uSaturation.value = options.saturation;
+            uniforms.uCenterOffset.value = new Float32Array([options.centerX, options.centerY]);
+            uniforms.uZoom.value = options.zoom;
+            uniforms.uColor1.value = new Float32Array(hexToRgb(options.color1));
+            uniforms.uColor2.value = new Float32Array(hexToRgb(options.color2));
+            uniforms.uColor3.value = new Float32Array(hexToRgb(options.color3));
+        }
+
+        resize() {
+            const rect = this.container.getBoundingClientRect();
+            const width = Math.max(1, Math.floor(rect.width));
+            const height = Math.max(1, Math.floor(rect.height));
+            this.renderer.setSize(width, height);
+            this.program.uniforms.iResolution.value[0] = this.gl.drawingBufferWidth;
+            this.program.uniforms.iResolution.value[1] = this.gl.drawingBufferHeight;
+            this.render(performance.now());
+        }
+
+        render = now => {
+            this.program.uniforms.iTime.value = (now - this.timeOrigin) * 0.001;
+            this.renderer.render({ scene: this.mesh });
+            if (this.visible && this.intersecting) {
+                this.raf = requestAnimationFrame(this.render);
+            }
+        };
+
+        toggleAnimation() {
+            if (this.visible && this.intersecting) {
+                if (!this.raf) {
+                    this.raf = requestAnimationFrame(this.render);
+                }
+            } else if (this.raf) {
+                cancelAnimationFrame(this.raf);
+                this.raf = 0;
+            }
+        }
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const container = document.getElementById('grainient-bg');
+        if (!container) return;
+
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        new GrainientBackground(container, {
+            color1: '#ff7a00',
+            color2: '#fff4d8',
+            color3: '#c6b0ff',
+            timeSpeed: reduceMotion ? 0.0 : 1.08,
+            colorBalance: -0.02,
+            warpStrength: 1.08,
+            warpFrequency: 4.6,
+            warpSpeed: reduceMotion ? 0.0 : 2.05,
+            warpAmplitude: 48.0,
+            blendAngle: -12.0,
+            blendSoftness: 0.15,
+            rotationAmount: 260.0,
+            noiseScale: 1.55,
+            grainAmount: 0.115,
+            grainScale: 1.8,
+            grainAnimated: !reduceMotion,
+            contrast: 1.18,
+            gamma: 0.98,
+            saturation: 1.08,
+            centerX: 0.04,
+            centerY: -0.03,
+            zoom: 0.97
+        });
+    });
+</script>
+
+
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        const siteHeader = document.getElementById('site-header');
+        const coverSection = document.getElementById('cover');
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
-        const navItems = document.querySelectorAll('.nav-item');
+        const navItems = Array.from(document.querySelectorAll('.nav-item'));
+        const pageSections = Array.from(document.querySelectorAll('main section[id]'));
         const experienceToggles = document.querySelectorAll('.experience-toggle');
 
-        // Toggle mobile menu
+        const setMenuState = isOpen => {
+            mobileMenu.classList.toggle('hidden', !isOpen);
+            mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
+            menuIcon.setAttribute('d', isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16');
+        };
+
         mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                // Show Hamburger icon
-                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-            } else {
-                // Show Close (X) icon
-                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-            }
+            setMenuState(mobileMenu.classList.contains('hidden'));
         });
 
-        // Close mobile menu when a nav link is clicked
         navItems.forEach(item => {
-            item.addEventListener('click', () => {
-                if (window.innerWidth < 768) {
-                    mobileMenu.classList.add('hidden');
-                    menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            item.addEventListener('click', event => {
+                const targetSelector = item.getAttribute('href');
+                const targetSection = targetSelector ? document.querySelector(targetSelector) : null;
+
+                if (targetSection) {
+                    event.preventDefault();
+                    const offset = window.innerWidth >= 640 ? 108 : 118;
+                    const targetY = targetSection.getBoundingClientRect().top + window.scrollY - offset;
+                    navItems.forEach(link => link.classList.remove('is-active'));
+                    item.classList.add('is-active');
+                    window.scrollTo({
+                        top: Math.max(targetY, 0),
+                        behavior: 'smooth'
+                    });
+                    window.history.replaceState(null, '', targetSelector);
+                    window.setTimeout(updateActiveNav, 420);
+                }
+
+                if (window.innerWidth < 640) {
+                    setMenuState(false);
                 }
             });
+        });
+
+        const updateHeaderState = () => {
+            const trigger = coverSection ? Math.min(coverSection.offsetHeight * 0.55, window.innerHeight * 0.72) : 120;
+            siteHeader.classList.toggle('is-floating', window.scrollY > trigger);
+        };
+
+        const updateActiveNav = () => {
+            const referenceY = window.scrollY + 180;
+            let activeId = pageSections[0]?.id || 'cover';
+
+            pageSections.forEach(section => {
+                if (referenceY >= section.offsetTop) {
+                    activeId = section.id;
+                }
+            });
+
+            navItems.forEach(item => {
+                const target = item.getAttribute('href');
+                item.classList.toggle('is-active', target === `#${activeId}`);
+            });
+        };
+
+        const syncHeaderAndNav = () => {
+            updateHeaderState();
+            updateActiveNav();
+        };
+
+        window.addEventListener('scroll', syncHeaderAndNav, { passive: true });
+        document.addEventListener('scroll', syncHeaderAndNav, { passive: true });
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 640) {
+                setMenuState(false);
+            }
+            syncHeaderAndNav();
         });
 
         experienceToggles.forEach(toggle => {
@@ -1198,6 +1925,8 @@
             });
         });
 
+        setMenuState(false);
+        syncHeaderAndNav();
     });
 </script>
 
