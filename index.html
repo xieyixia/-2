@@ -3,10 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>卢泓臻 - 个人作品集</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>卢泓臻 · 品牌传播作品集｜海外推广 · GEO 优化 · 舆情分析</title>
+    <meta name="description" content="卢泓臻的个人作品集。山东大学宗教学硕士，做过杭州至简动力、广东华沿机器人的品牌公关与品牌增长，覆盖海外社媒从 0 到 1、GEO 优化、整合传播与小红书内容增长。">
+    <meta name="theme-color" content="#f7ece1">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23ee8a27'/%3E%3Ctext x='50' y='50' font-family='sans-serif' font-size='56' font-weight='700' fill='%23fff' text-anchor='middle' dominant-baseline='central'%3E%E5%8D%A2%3C/text%3E%3C/svg%3E">
+    <link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="卢泓臻 · 个人作品集">
+    <meta property="og:title" content="卢泓臻 · 品牌传播作品集">
+    <meta property="og:description" content="海外推广、GEO 优化、整合传播与舆情分析。四段品牌一线经历，附可下载的简历与课题方案。">
+    <meta property="og:url" content="https://xieyixia.github.io/-2/">
+    <meta property="og:image" content="https://xieyixia.github.io/-2/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <script src="js/tailwind.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+        @font-face {
+            font-family: 'Outfit';
+            font-style: normal;
+            font-weight: 400 800;
+            font-display: swap;
+            src: url('fonts/outfit-latin.woff2') format('woff2');
+            unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        @font-face {
+            font-family: 'Outfit';
+            font-style: normal;
+            font-weight: 400 800;
+            font-display: swap;
+            src: url('fonts/outfit-latin-ext.woff2') format('woff2');
+            unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
         
         :root {
             --brand-orange: #ee8a27;
@@ -31,7 +59,7 @@
         body {
             position: relative;
             min-height: 100dvh;
-            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
             color: var(--text-main);
             background:
                 radial-gradient(circle at 50% -6%, rgba(255, 255, 255, 0.44), transparent 34%),
@@ -370,8 +398,8 @@
         .cover-section {
             position: relative;
             overflow: clip;
-            padding-top: clamp(5rem, 8vw, 7rem);
-            padding-bottom: clamp(4rem, 7vw, 6rem);
+            padding-top: clamp(3.5rem, 5vw, 4.5rem);
+            padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
             background: transparent;
             scroll-margin-top: 7.5rem;
         }
@@ -420,7 +448,7 @@
 
         .cover-copy-stack {
             display: grid;
-            gap: clamp(0.75rem, 1.7vw, 1.3rem);
+            gap: clamp(0.65rem, 1.2vw, 0.95rem);
             width: min(100%, 31rem);
         }
 
@@ -446,6 +474,27 @@
 
         .cover-display-title span {
             display: block;
+        }
+
+        .cover-intro {
+            display: grid;
+            gap: 0.45rem;
+            max-width: 30rem;
+        }
+
+        .cover-role {
+            margin: 0;
+            font-size: clamp(0.95rem, 1.35vw, 1.15rem);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: #241d18;
+        }
+
+        .cover-fact {
+            margin: 0;
+            font-size: clamp(0.85rem, 1.15vw, 1rem);
+            line-height: 1.7;
+            color: #4a423a;
         }
 
         .cover-hero-side {
@@ -1122,6 +1171,33 @@
                 gap: 2rem;
             }
         }
+
+        /* ---- Accessibility & interaction polish ---- */
+        a, button, [role="button"] { touch-action: manipulation; }
+
+        :where(a, button, summary):focus-visible {
+            outline: 2px solid #a2560b !important;
+            outline-offset: 3px;
+            border-radius: 0.4rem;
+        }
+
+        img { max-width: 100%; height: auto; }
+
+        @media (max-width: 639px) {
+            .nav-item { min-height: 44px; display: flex; align-items: center; }
+            .project-resource-link { min-height: 56px; }
+            .contact-card { min-height: 56px; }
+            .contact-value { min-height: 44px; display: inline-flex; align-items: center; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
 </style>
 </head>
 <body>
@@ -1135,7 +1211,7 @@
             <aside id="site-header" class="sidebar transition-all duration-300">
                 <div class="sidebar-logo">
                     <span class="tracking-tight">LuHongZhen</span>
-                    <button id="mobile-menu-btn" class="sm:hidden p-2 -mr-2 text-gray-900 focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="打开导航菜单">
+                    <button id="mobile-menu-btn" class="sm:hidden grid place-items-center w-11 h-11 -mr-2 text-gray-900" aria-expanded="false" aria-controls="mobile-menu" aria-label="打开导航菜单">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
@@ -1144,7 +1220,7 @@
 
                 <div id="mobile-menu" class="nav-cluster hidden sm:flex">
                     <nav class="sidebar-nav" aria-label="页面导航">
-                        <a href="#cover" class="nav-item">Cover<span class="nav-number">00</span></a>
+                        <a href="#cover" class="nav-item">封面<span class="nav-number">00</span></a>
                         <a href="#education" class="nav-item">教育背景<span class="nav-number">01</span></a>
                         <a href="#experience" class="nav-item">工作经历<span class="nav-number">02</span></a>
                         <a href="#portfolio" class="nav-item">项目经验<span class="nav-number">03</span></a>
@@ -1167,8 +1243,12 @@
                                 <span>Personal</span>
                                 <span>Portfolio</span>
                             </h1>
+                            <div class="cover-intro">
+                                <p class="cover-role">品牌传播 · 海外推广 · GEO 优化 · 舆情分析</p>
+                                <p class="cover-fact">推动品牌 AI 可见度从 3% 提升到 28%；统筹 400+ 人企业活动，0 延误、0 重大执行事故。</p>
+                            </div>
                             <div class="action-rail cover-downloads" aria-label="下载资料">
-                                <a class="download-action resume-action" href="https://raw.githubusercontent.com/xieyixia/-2/main/downloads/luhongzhen-resume.pdf" download="卢泓臻-简历.pdf" aria-label="打开卢泓臻简历 PDF">
+                                <a class="download-action resume-action" href="downloads/luhongzhen-resume.pdf" target="_blank" rel="noopener" aria-label="打开卢泓臻简历 PDF">
                                     <span class="action-shell">
                                         <span class="action-copy">
                                             <span class="action-kicker">Download Resume</span>
@@ -1186,7 +1266,7 @@
                                     <span class="action-line" aria-hidden="true"></span>
                                 </a>
 
-                                <a class="download-action portfolio-action" href="https://raw.githubusercontent.com/xieyixia/-2/main/downloads/luhongzhen-portfolio.pdf" download="卢泓臻-作品集.pdf" aria-label="打开卢泓臻作品集 PDF">
+                                <a class="download-action portfolio-action" href="downloads/luhongzhen-portfolio.pdf" target="_blank" rel="noopener" aria-label="打开卢泓臻作品集 PDF">
                                     <span class="action-shell">
                                         <span class="action-copy">
                                             <span class="action-kicker">Download Portfolio</span>
@@ -1208,7 +1288,7 @@
                     </div>
                     <div class="cover-hero-side">
                         <div class="cover-portrait-card">
-                            <img src="美式证件照2.jpg" onerror="this.src='https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'" alt="卢泓臻个人照片">
+                            <img src="portrait.webp" width="900" height="1350" alt="卢泓臻个人照片" fetchpriority="high" decoding="async">
                         </div>
                     </div>
                 </div>
@@ -1228,14 +1308,14 @@
             
             <div class="mt-10 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                 <div class="education-card p-8 md:p-10">
-                    <h4 class="text-sm text-gray-500 font-semibold mb-3">山东大学 · 硕士</h4>
-                    <h3 class="text-3xl font-bold mb-4">宗教学</h3>
+                    <h3 class="text-sm text-gray-500 font-semibold mb-3">山东大学 · 硕士</h3>
+                    <p class="text-3xl font-bold mb-4">宗教学</p>
                     <p class="text-gray-600 mb-8">主修课程：社会调查方法、宗教学概论</p>
                     <p class="education-date text-sm text-gray-400">2025.09 - 2028.06</p>
                 </div>
                 <div class="education-card p-8 md:p-10">
-                    <h4 class="text-sm text-gray-500 font-semibold mb-3">山东大学 · 本科</h4>
-                    <h3 class="text-3xl font-bold mb-4">哲学</h3>
+                    <h3 class="text-sm text-gray-500 font-semibold mb-3">山东大学 · 本科</h3>
+                    <p class="text-3xl font-bold mb-4">哲学</p>
                     <p class="text-gray-600 mb-8">荣誉：23年全国英语竞赛三等奖，24年全国英语竞赛二等奖。CET-6 (613分)</p>
                     <p class="education-date text-sm text-gray-400">2022.09 - 2026.06</p>
                 </div>
@@ -1390,7 +1470,7 @@
                 <p class="text-xs md:text-sm uppercase tracking-[0.18em] text-gray-500 mb-4">广州凡岛网络科技有限公司 · 在职项目成果</p>
                 <div class="sub-header">日化产品营销</div>
                 <div class="box-container flex items-center justify-center">
-                    <img src="kono产品营销数据.jpg" onerror="this.src='https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'" alt="日化品牌营销案例图" class="w-full rounded-lg shadow-sm">
+                    <img src="kono-data.webp" width="1600" height="900" decoding="async" alt="日化品牌营销案例图" class="w-full rounded-lg shadow-sm">
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mt-6 md:mt-8 text-gray-600">
                     <p>主导 KONO、WIS 及其它核心产品的全案内容规划。通过深挖产品功能痛点与场景体验，制定符合小红书平台语境的种草策略。</p>
@@ -1402,7 +1482,7 @@
                 <p class="text-xs md:text-sm uppercase tracking-[0.18em] text-gray-500 mb-4">个人账号项目 · 自运营成果</p>
                 <div class="sub-header">小红书个人IP搭建</div>
                 <div class="box-container flex items-center justify-center overflow-hidden">
-                    <img src="截屏 2026-04-22 14.39.22.jpg" onerror="this.src='https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80'" alt="个人账号运营成果" class="w-full object-cover rounded-lg shadow-sm">
+                    <img src="xhs-account.webp" width="1200" height="1046" decoding="async" alt="个人账号运营成果" class="w-full object-cover rounded-lg shadow-sm">
                 </div>
                 <div class="mt-6 md:mt-8 text-gray-600 max-w-4xl">
                     <p><strong>账号 @斜一下的至秦：</strong>从0到1孵化小红书校园生活类账号。完成239篇爆款笔记撰写，单篇最高阅读64万+。通过分析后台停留时长与转化率，不断优化内容方向，目前累计拥有1.9万+精准垂直粉丝，获赞与收藏总量超过50万+。</p>
@@ -1426,7 +1506,7 @@
                 </div>
 
                 <div class="project-resource-grid" aria-label="鹅创营课题成果下载">
-                    <a class="project-resource-link" href="https://raw.githubusercontent.com/xieyixia/-2/main/downloads/qclaw-xiaohongshu-plan.pdf" download="QClaw小红书种草传播方案.pdf" aria-label="打开 QClaw 小红书种草传播方案 PDF">
+                    <a class="project-resource-link" href="downloads/qclaw-xiaohongshu-plan.pdf" target="_blank" rel="noopener" aria-label="打开 QClaw 小红书种草传播方案 PDF">
                         <span class="project-resource-copy">
                             <span class="project-resource-title">QClaw 内容种草课题</span>
                             <span class="project-resource-meta">下载 PDF · 小红书种草传播方案</span>
@@ -1439,7 +1519,7 @@
                         </span>
                     </a>
 
-                    <a class="project-resource-link" href="https://raw.githubusercontent.com/xieyixia/-2/main/downloads/tencent-news-release-plan.pdf" download="腾讯广告创享会新闻稿-传播策划案.pdf" aria-label="打开 腾讯广告创享会新闻稿传播课题 PDF">
+                    <a class="project-resource-link" href="downloads/tencent-news-release-plan.pdf" target="_blank" rel="noopener" aria-label="打开 腾讯广告创享会新闻稿传播课题 PDF">
                         <span class="project-resource-copy">
                             <span class="project-resource-title">腾讯广告创享会新闻稿课题</span>
                             <span class="project-resource-meta">下载 PDF · 新闻稿传播策划案</span>
@@ -1452,7 +1532,7 @@
                         </span>
                     </a>
 
-                    <a class="project-resource-link" href="https://raw.githubusercontent.com/xieyixia/-2/main/downloads/qq-file-campus-plan.pdf" download="QQ闪传校园事件话题传播策划方案.pdf" aria-label="打开 QQ闪传活动策划课题 PDF">
+                    <a class="project-resource-link" href="downloads/qq-file-campus-plan.pdf" target="_blank" rel="noopener" aria-label="打开 QQ闪传活动策划课题 PDF">
                         <span class="project-resource-copy">
                             <span class="project-resource-title">QQ闪传校园话题课题</span>
                             <span class="project-resource-meta">下载 PDF · 校园事件传播策划方案</span>
@@ -1465,7 +1545,7 @@
                         </span>
                     </a>
 
-                    <a class="project-resource-link" href="https://raw.githubusercontent.com/xieyixia/-2/main/downloads/workbuddy-user-research.pdf" download="大学生群体对Workbuddy的认知与使用情况研究.pdf" aria-label="打开 Workbuddy 用户研究课题 PDF">
+                    <a class="project-resource-link" href="downloads/workbuddy-user-research.pdf" target="_blank" rel="noopener" aria-label="打开 Workbuddy 用户研究课题 PDF">
                         <span class="project-resource-copy">
                             <span class="project-resource-title">Workbuddy 用户研究课题</span>
                             <span class="project-resource-meta">下载 PDF · 深度用户研究报告</span>
@@ -1513,8 +1593,8 @@
                 <div>
                     <div class="sub-header mt-0">商务合作矩阵</div>
                     <div class="mt-6 md:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <img src="IMG_6048.jpg" alt="商务合作明细1" class="w-full border border-gray-200 rounded-lg shadow-sm">
-                        <img src="IMG_6049.jpg" alt="商务合作明细2" class="w-full border border-gray-200 rounded-lg shadow-sm">
+                        <img src="collab-1.webp" width="900" height="1957" decoding="async" alt="商务合作明细1" class="w-full border border-gray-200 rounded-lg shadow-sm">
+                        <img src="collab-2.webp" width="900" height="1957" decoding="async" alt="商务合作明细2" class="w-full border border-gray-200 rounded-lg shadow-sm">
                     </div>
                     <p class="text-gray-600 mt-6 leading-relaxed">
                         成功将线上流量变现为品牌传播力。深度操盘包含天猫、淘宝、科颜氏、必胜客、支付宝、Canva等30+知名品牌的商业植入，熟练把控从Brief解读、软广创意到结案复盘的全链路商务流。
@@ -1539,28 +1619,28 @@
                     <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-gray-900 flex items-center justify-center mb-4 md:mb-6">
                         <span class="text-xl md:text-2xl font-bold">AI</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2">AI 生产力</h4>
+                    <h3 class="font-bold text-lg mb-2">AI 生产力</h3>
                     <p class="text-gray-500">Codex<br>ChatGPT<br>Perplexity<br>Midjourney<br>Veo</p>
                 </div>
                 <div class="flex flex-col items-start sm:items-center text-left sm:text-center">
                     <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-gray-900 flex items-center justify-center mb-4 md:mb-6">
                         <span class="text-xl md:text-2xl font-bold">VD</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2">视觉设计</h4>
+                    <h3 class="font-bold text-lg mb-2">视觉设计</h3>
                     <p class="text-gray-500">Canva<br>Figma<br>Adobe Express<br>Recraft</p>
                 </div>
                 <div class="flex flex-col items-start sm:items-center text-left sm:text-center">
                     <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-gray-900 flex items-center justify-center mb-4 md:mb-6">
-                        <span class="text-xl md:text-2xl font-bold">MV</span>
+                        <span class="text-xl md:text-2xl font-bold">VE</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2">视频与图文</h4>
+                    <h3 class="font-bold text-lg mb-2">视频与图文</h3>
                     <p class="text-gray-500">PR剪辑<br>剪映<br>Runway / Sora<br>秀米排版</p>
                 </div>
                 <div class="flex flex-col items-start sm:items-center text-left sm:text-center">
                     <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-gray-900 flex items-center justify-center mb-4 md:mb-6">
                         <span class="text-xl md:text-2xl font-bold">DA</span>
                     </div>
-                    <h4 class="font-bold text-lg mb-2">数据分析</h4>
+                    <h3 class="font-bold text-lg mb-2">数据分析</h3>
                     <p class="text-gray-500">蝉妈妈<br>千瓜数据<br>Excel<br>Xmind</p>
                 </div>
             </div>
@@ -1601,7 +1681,7 @@
 </div>
 
 <script type="module">
-    import { Renderer, Program, Mesh, Triangle } from 'https://esm.sh/ogl@1.0.11';
+    import { Renderer, Program, Mesh, Triangle } from './js/ogl.mjs';
 
     const vertex = `#version 300 es
     in vec2 position;
@@ -1886,6 +1966,7 @@
             mobileMenu.classList.toggle('hidden', !isOpen);
             mobileMenuBtn.setAttribute('aria-expanded', String(isOpen));
             menuIcon.setAttribute('d', isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16');
+            mobileMenuBtn.setAttribute('aria-label', isOpen ? '关闭导航菜单' : '打开导航菜单');
         };
 
         mobileMenuBtn.addEventListener('click', () => {
