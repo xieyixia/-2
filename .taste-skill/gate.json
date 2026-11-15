@@ -1,0 +1,1727 @@
+{
+ "start": "2026-11-15T08:39:34.727Z",
+ "round": 3,
+ "idle": 0,
+ "errors": 0,
+ "status": "open",
+ "history": [
+  {
+   "at": "2026-11-15T08:43:03.255Z",
+   "mode": "manual",
+   "status": "fail",
+   "fails": 46,
+   "round": 1,
+   "reused": false,
+   "stopHookActive": false
+  },
+  {
+   "at": "2026-11-15T08:47:20.958Z",
+   "mode": "manual",
+   "status": "fail",
+   "fails": 45,
+   "round": 2,
+   "reused": false,
+   "stopHookActive": false
+  },
+  {
+   "at": "2026-11-15T08:51:34.667Z",
+   "mode": "manual",
+   "status": "open",
+   "fails": 46,
+   "round": 3,
+   "reused": false,
+   "stopHookActive": false
+  }
+ ],
+ "max": 3,
+ "marker": {
+  "page": "index.html",
+  "url": null,
+  "root": null,
+  "kind": "service",
+  "category": "品牌传播与公关作品集",
+  "primary": "下载简历",
+  "rounds": 3,
+  "start": "2026-11-15T08:39:34.727Z",
+  "by": "gate.mjs --start"
+ },
+ "manual": true,
+ "roundKey": "cf1944478b6ecf78:da39a3ee",
+ "roundFree": false,
+ "idleFree": false,
+ "blockKey": null,
+ "fp": "cf1944478b6ecf78",
+ "page": "index.html",
+ "found": {
+  "fails": [
+   {
+    "check": "no-visual",
+    "where": "section#experience \"工作经历 02\"",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "section#experience \"工作经历 02\""
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "section#skills \"技能清单 05\"",
+    "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "section#skills \"技能清单 05\""
+    ]
+   },
+   {
+    "check": "cta",
+    "where": "section#cover",
+    "msg": "the hero has no button (the nav's does not count)",
+    "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "cta"
+    ],
+    "wheres": [
+     "section#cover"
+    ]
+   },
+   {
+    "check": "cta",
+    "where": "section#contact \"联系我 06\"",
+    "msg": "the last section before the footer ends with no button",
+    "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "cta"
+    ],
+    "wheres": [
+     "section#contact \"联系我 06\""
+    ]
+   },
+   {
+    "check": "heading-scale",
+    "where": "div:nth-of-type(1) > div.flex.flex-col > div.border-l-4.border-orange-500:nth-of-type(1) > h3.text-4xl.font-bold \"18.4万+\"",
+    "msg": "h3 headings in 2 sizes, 18px (\"AI 生产力\") to 48px (x2.67)",
+    "fix": "size headings by level: the h1 largest, one size per level, each level below the one above",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "heading-scale"
+    ],
+    "wheres": [
+     "div:nth-of-type(1) > div.flex.flex-col > div.border-l-4.border-orange-500:nth-of-type(1) > h3.text-4xl.font-bold \"18.4万+\""
+    ]
+   },
+   {
+    "check": "contrast",
+    "where": "div#mobile-menu > nav.sidebar-nav > a.nav-item:nth-of-type(1) \"封面 00\"",
+    "msg": "body text over a effect reads at 2.7:1 at its worst tenth (needs 4.5:1) (and 10 more like it: \"00\", \"2025.09 - 2028.06\", \"品牌公关 · 2026.10 - 2027.01\", \"品牌增长 · 2026.07 - 2026.09\", ...)",
+    "fix": "put the text on a calm part of the picture, or on a solid panel",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "contrast"
+    ],
+    "wheres": [
+     "div#mobile-menu > nav.sidebar-nav > a.nav-item:nth-of-type(1) \"封面 00\""
+    ]
+   },
+   {
+    "check": "contrast",
+    "where": "section#portfolio > div.mt-12:nth-of-type(3) > div.mt-6.text-gray-600 > p \"账号 @斜一下的至秦：从0到1孵化小红书校园生活类账号。完成239篇爆款笔记撰写\"",
+    "msg": "body text over a effect reads at 4.4:1 at its worst tenth (needs 4.5:1), on a busy ground (and 1 more like it: \"策略性占位与心智渗透。在抖音高优达人评论区，以神\")",
+    "fix": "put the text on a calm part of the picture, or on a solid panel",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "contrast"
+    ],
+    "wheres": [
+     "section#portfolio > div.mt-12:nth-of-type(3) > div.mt-6.text-gray-600 > p \"账号 @斜一下的至秦：从0到1孵化小红书校园生活类账号。完成239篇爆款笔记撰写\""
+    ]
+   },
+   {
+    "check": "effects-fit",
+    "where": "(the page)",
+    "msg": "a service page asks for 1 WebGL context (div#grainient-bg, canvas): shader effects are for tech, software, AI and gaming pages",
+    "fix": "take the WebGL effects off this page: lead with its photographs, flat colour and type (effects are for tech, software, AI and gaming pages)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "effects-fit"
+    ],
+    "wheres": [
+     "(the page)"
+    ]
+   },
+   {
+    "check": "effect-kind",
+    "where": "(the page)",
+    "msg": "a service page (--type) moves with the scroll: scroll libraries or timelines (scroll-timeline, view-timeline): effects fit tech, gaming and software pages and a product with a technical subject, never a place, shop or service page (house rule)",
+    "fix": "take the scroll-driven motion off: on a place, shop or service page the page scrolls plainly and the parts sit still",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "effect-kind"
+    ],
+    "wheres": [
+     "(the page)"
+    ]
+   },
+   {
+    "check": "phone-number",
+    "where": "div.contact-grid > div.contact-list > div.contact-card:nth-of-type(3) > a.contact-value \"tel:18922028036\"",
+    "msg": "a tel: link calls a number in a real dialable format: \"tel:18922028036\"; a visitor can dial it and reach a stranger",
+    "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "phone-number"
+    ],
+    "wheres": [
+     "div.contact-grid > div.contact-list > div.contact-card:nth-of-type(3) > a.contact-value \"tel:18922028036\""
+    ]
+   },
+   {
+    "check": "section-tile",
+    "where": "section#experience \"工作经历 02\"",
+    "msg": "the section is 753px tall (0.84 screens at 1440x900), shorter than the screen: its tile (the screen from its top) shows 753px of it and 147px of the next section, its heading \"项目经验 03\" on screen",
+    "fix": "set every section after the hero to one screen or two (height: calc(var(--h,1) * 100vh)) and fit its content above --padb",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-tile"
+    ],
+    "wheres": [
+     "section#experience \"工作经历 02\""
+    ]
+   },
+   {
+    "check": "focus-visible",
+    "where": "section#experience > div.experience-list:nth-of-type(2) > div.experience-item:nth-of-type(1) > button.experience-toggle \"杭州至简动力科技有限公司 品牌公关 · 2026.10 - 2027.01\"",
+    "msg": "Tab stop 10, button \"杭州至简动力科技有限公司 品牌公关 · 2026.10 - 2027.01\": the focus lands on something you cannot see",
+    "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "focus-visible"
+    ],
+    "wheres": [
+     "section#experience > div.experience-list:nth-of-type(2) > div.experience-item:nth-of-type(1) > button.experience-toggle \"杭州至简动力科技有限公司 品牌公关 · 2026.10 - 2027.01\""
+    ]
+   },
+   {
+    "check": "focus-visible",
+    "where": "section#portfolio > div.mt-12:nth-of-type(4) > div.project-resource-grid:nth-of-type(3) > a.project-resource-link:nth-of-type(1) \"打开 QClaw 小红书种草传播方案 PDF\"",
+    "msg": "Tab stop 14, a \"打开 QClaw 小红书种草传播方案 PDF\": the focus lands on something you cannot see",
+    "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "focus-visible"
+    ],
+    "wheres": [
+     "section#portfolio > div.mt-12:nth-of-type(4) > div.project-resource-grid:nth-of-type(3) > a.project-resource-link:nth-of-type(1) \"打开 QClaw 小红书种草传播方案 PDF\""
+    ]
+   },
+   {
+    "check": "focus-visible",
+    "where": "section#portfolio > div.mt-12:nth-of-type(4) > div.project-resource-grid:nth-of-type(3) > a.project-resource-link:nth-of-type(2) \"打开 腾讯广告创享会新闻稿传播课题 PDF\"",
+    "msg": "Tab stop 15, a \"打开 腾讯广告创享会新闻稿传播课题 PDF\": the focus lands on something you cannot see",
+    "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "focus-visible"
+    ],
+    "wheres": [
+     "section#portfolio > div.mt-12:nth-of-type(4) > div.project-resource-grid:nth-of-type(3) > a.project-resource-link:nth-of-type(2) \"打开 腾讯广告创享会新闻稿传播课题 PDF\""
+    ]
+   },
+   {
+    "check": "focus-visible",
+    "where": "div.contact-grid:nth-of-type(2) > div.contact-list:nth-of-type(2) > div.contact-card:nth-of-type(1) > a.contact-value \"18922028036@163.com\"",
+    "msg": "Tab stop 18, a \"18922028036@163.com\": the focus lands on something you cannot see",
+    "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "focus-visible"
+    ],
+    "wheres": [
+     "div.contact-grid:nth-of-type(2) > div.contact-list:nth-of-type(2) > div.contact-card:nth-of-type(1) > a.contact-value \"18922028036@163.com\""
+    ]
+   },
+   {
+    "check": "moment-none",
+    "where": "(the page)",
+    "msg": "a service page (--type) deals no moment: every kind carries one, two on a long page (moments.md)",
+    "fix": "deal one (moments.mjs pick --page service --photo) and mount it in its own section",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "moment-none"
+    ],
+    "wheres": [
+     "(the page)"
+    ]
+   },
+   {
+    "check": "hero-screen",
+    "where": "section#cover \"卢泓臻 Personal Portfolio 品牌传播 · 海外推广 · GEO\"",
+    "msg": "the hero ends at 992px on a 900px screen, 92px below the fold: it ends at the fold, 1px either way (SR-1)",
+    "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "hero-screen"
+    ],
+    "wheres": [
+     "section#cover \"卢泓臻 Personal Portfolio 品牌传播 · 海外推广 · GEO\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#portfolio \"项目经验03 将工作经历中的代表成果与个人独立案例拆开展示，重点呈现项目背景、执\"",
+    "msg": "the section is 3490px tall (3.9 screens), 1690px over two screens (1800px): every section after the hero is one screen or two, 2px either way (SR-2)",
+    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height"
+    ],
+    "wheres": [
+     "section#portfolio \"项目经验03 将工作经历中的代表成果与个人独立案例拆开展示，重点呈现项目背景、执\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#education \"教育背景01 山东大学 · 硕士 宗教学 主修课程：社会调查方法、宗教学概论 2\"",
+    "msg": "the section is 568px tall (0.6 screens), 332px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height"
+    ],
+    "wheres": [
+     "section#education \"教育背景01 山东大学 · 硕士 宗教学 主修课程：社会调查方法、宗教学概论 2\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#skills \"技能清单05 积极拥抱前沿工具与技术变革，将设计美学与AI工作流完美结合，极大提\"",
+    "msg": "the section is 570px tall (0.6 screens), 330px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 3 more like it: \"联系我06 如果你希望进一步了解我的项目经历、传\", \"运营数据04 数据是检验策略的唯一真理。通过精准\", \"工作经历02 从机器人品牌出海到快消内容投放，覆\") (SR-2)",
+    "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height"
+    ],
+    "wheres": [
+     "section#skills \"技能清单05 积极拥抱前沿工具与技术变革，将设计美学与AI工作流完美结合，极大提\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#operations \"运营数据04 数据是检验策略的唯一真理。通过精准把控点击率、互动量与转化指标，驱\"",
+    "msg": "the section starts at 5803px, 403px below the screen grid (6 x 900px): sections start on whole screens (SR-2)",
+    "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height"
+    ],
+    "wheres": [
+     "section#operations \"运营数据04 数据是检验策略的唯一真理。通过精准把控点击率、互动量与转化指标，驱\""
+    ]
+   },
+   {
+    "check": "section-height",
+    "where": "section#contact \"联系我06 如果你希望进一步了解我的项目经历、传播策略能力或合作方式，可以通过以\"",
+    "msg": "the section starts at 7529px, 329px below the screen grid (8 x 900px): sections start on whole screens (and 4 more like it: \"技能清单05 积极拥抱前沿工具与技术变革，将设计\", \"工作经历02 从机器人品牌出海到快消内容投放，覆\", \"卢泓臻 Personal Portfolio 品\") (SR-2)",
+    "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-height"
+    ],
+    "wheres": [
+     "section#contact \"联系我06 如果你希望进一步了解我的项目经历、传播策略能力或合作方式，可以通过以\""
+    ]
+   },
+   {
+    "check": "section-air",
+    "where": "section#experience > div.experience-list \"杭州至简动力科技有限公司 品牌公关 · 2026.10 - 2027.01 工作\"",
+    "msg": "a top border across 100% of the container, between the section's content: sections and their parts are told apart by air and ground, not lines (SR-3)",
+    "fix": "take the rule out: sections and their parts are parted by their ground and the air between them",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "section-air"
+    ],
+    "wheres": [
+     "section#experience > div.experience-list \"杭州至简动力科技有限公司 品牌公关 · 2026.10 - 2027.01 工作\""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "section#portfolio > div.section-header > div.section-title-wrapper > h2.section-title \"项目经验03\"",
+    "msg": "the screen at scroll 1800px (stride 2) shows 387px of section 4 and the heading of section 4 whole and the content of 2 sections, over 24px each beside section 3: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "section#portfolio > div.section-header > div.section-title-wrapper > h2.section-title \"项目经验03\""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "section#experience > div.section-header > div.section-title-wrapper > h2.section-title \"工作经历02\"",
+    "msg": "the screen at scroll 992px (the top of section 2) shows 332px of section 3 and the heading of section 3 whole and the content of 2 sections, over 24px each beside section 2: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "section#experience > div.section-header > div.section-title-wrapper > h2.section-title \"工作经历02\""
+    ]
+   },
+   {
+    "check": "one-section",
+    "where": "section#contact > div.section-header > div.section-title-wrapper > h2.section-title \"联系我06\"",
+    "msg": "the screen at scroll 6958px (the top of section 6) shows 329px of section 7 and the heading of section 7 whole and the content of 2 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (and 6 more like it: scroll 5400px, scroll 6300px, scroll 900px) (SR-4)",
+    "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-section"
+    ],
+    "wheres": [
+     "section#contact > div.section-header > div.section-title-wrapper > h2.section-title \"联系我06\""
+    ]
+   },
+   {
+    "check": "one-heading",
+    "where": "section#experience > div.section-header > div.section-title-wrapper > h2.section-title \"工作经历02\"",
+    "msg": "headings of two sections show whole on one screen at 7 of 145 scroll positions (4.8%; at scroll 850, 900, 950, 6800px), here with \"教育背景01\": at most 3% on a desktop (SR-5)",
+    "fix": "make the sections one screen tall so their headings sit a screen apart and two never share one",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "one-heading"
+    ],
+    "wheres": [
+     "section#experience > div.section-header > div.section-title-wrapper > h2.section-title \"工作经历02\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "section#cover \"卢泓臻 Personal Portfolio 品牌传播 · 海外推广 · GEO\"",
+    "msg": "the content of section 1 runs 140px from the left and 140px from the right (read from its outermost blocks: no .wrap): the page's container starts at 64px; the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)",
+    "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "section#cover \"卢泓臻 Personal Portfolio 品牌传播 · 海外推广 · GEO\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "div.layout-container > header.header-shell \"LuHongZhen 封面00 教育背景01 工作经历02 项目经验03 运营数\"",
+    "msg": "the nav's content runs 43px from the left and 43px from the right (read from its outermost blocks: no .wrap): the page's container starts at 64px; the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)",
+    "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "div.layout-container > header.header-shell \"LuHongZhen 封面00 教育背景01 工作经历02 项目经验03 运营数\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "div#grainient-bg",
+    "msg": "a <div> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+    "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "div#grainient-bg"
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "div.layout-container \"LuHongZhen 封面00 教育背景01 工作经历02 项目经验03 运营数\"",
+    "msg": "a <div> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 7 more like it: \"卢泓臻 Personal Portfolio 品\", \"教育背景01 山东大学 · 硕士 宗教学 主修课\", \"工作经历02 从机器人品牌出海到快消内容投放，覆\") (SR-6)",
+    "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "div.layout-container \"LuHongZhen 封面00 教育背景01 工作经历02 项目经验03 运营数\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "aside#site-header \"LuHongZhen 封面00 教育背景01 工作经历02 项目经验03 运营数\"",
+    "msg": "a box runs 20-1420px, outside the container lines of the nav at 64-1376px: full width is for background layers and grounds only (SR-6)",
+    "fix": "keep it inside the container lines (.wrap): full width is for background layers and grounds only",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "aside#site-header \"LuHongZhen 封面00 教育背景01 工作经历02 项目经验03 运营数\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "aside#site-header > div.sidebar-logo > span.tracking-tight \"LuHongZhen\"",
+    "msg": "\"LuHongZhen\" runs 43-165px, outside the container lines of the nav at 64-1376px: full width is for background layers and grounds only (and 2 more like it: \"联系我06\", \"06\") (SR-6)",
+    "fix": "keep it inside the container lines (.wrap): full width is for background layers and grounds only",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "aside#site-header > div.sidebar-logo > span.tracking-tight \"LuHongZhen\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "div.section-header > div.section-title-wrapper > h2.section-title > sup \"01\"",
+    "msg": "5 text blocks start on a left line at x 323, 259px from the container's left: text starts on the container's left, or on one split line (x 621, 732, 843) (also \"02\", \"03\", \"04\") (SR-6)",
+    "fix": "start the text on the container's left, or on the one split line every split shares",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "div.section-header > div.section-title-wrapper > h2.section-title > sup \"01\""
+    ]
+   },
+   {
+    "check": "container-edges",
+    "where": "div.section-header > div.section-title-wrapper > h2.section-title > sup \"06\"",
+    "msg": "1 text block starts on a left line at x 260, 196px from the container's left: text starts on the container's left, or on one split line (x 621, 732, 843) (and 4 more like it: x 193, x 178, x 130) (SR-6)",
+    "fix": "start the text on the container's left, or on the one split line every split shares",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "container-edges"
+    ],
+    "wheres": [
+     "div.section-header > div.section-title-wrapper > h2.section-title > sup \"06\""
+    ]
+   },
+   {
+    "check": "split-pair",
+    "where": "section#contact > div.contact-grid \"我目前聚焦于品牌传播、公关策划、舆情分析与内容增长方向的机会，也欢迎围绕实习、校\"",
+    "msg": "the split's columns are off the page's one pair of lines: its right column starts at x 800, the first split's at 851; its right column starts at x 800, on none of the split lines 621 (k=5), 732 (k=6), 843 (k=7) (SR-8)",
+    "fix": "start every split's right column on one shared line (wrap.left + k x (width + 24) / 12, k 5, 6 or 7; 6 on a place page) and end the left one 24px before it",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "split-pair"
+    ],
+    "wheres": [
+     "section#contact > div.contact-grid \"我目前聚焦于品牌传播、公关策划、舆情分析与内容增长方向的机会，也欢迎围绕实习、校\""
+    ]
+   },
+   {
+    "check": "split-pair",
+    "where": "section#cover > div.hero-gradient > div.cover-hero-layout \"卢泓臻 Personal Portfolio 品牌传播 · 海外推广 · GEO\"",
+    "msg": "the split's columns are off the page's one pair of lines: its right column starts at x 851, on none of the split lines 633 (k=5), 732 (k=6), 831 (k=7) (SR-8)",
+    "fix": "start every split's right column on one shared line (wrap.left + k x (width + 24) / 12, k 5, 6 or 7; 6 on a place page) and end the left one 24px before it",
+    "widths": [
+     1440
+    ],
+    "from": "consistency",
+    "ids": [
+     "split-pair"
+    ],
+    "wheres": [
+     "section#cover > div.hero-gradient > div.cover-hero-layout \"卢泓臻 Personal Portfolio 品牌传播 · 海外推广 · GEO\""
+    ]
+   },
+   {
+    "check": "no-visual",
+    "where": "section#portfolio \"项目经验 03\"",
+    "msg": "pictures, effects and mocks cover 14% of this section; a feature section needs a visual (about 25% or more)",
+    "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "no-visual"
+    ],
+    "wheres": [
+     "section#portfolio \"项目经验 03\""
+    ]
+   },
+   {
+    "check": "heading-scale",
+    "where": "section#education > div.section-header > div.section-title-wrapper > h2.section-title \"教育背景 01\"",
+    "msg": "an h2 at 48px, as large as the h1 (44.8px) or larger (and 2 more like it: \"工作经历 02\", \"项目经验 03\")",
+    "fix": "size headings by level: the h1 largest, one size per level, each level below the one above",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "heading-scale"
+    ],
+    "wheres": [
+     "section#education > div.section-header > div.section-title-wrapper > h2.section-title \"教育背景 01\""
+    ]
+   },
+   {
+    "check": "off-grid",
+    "where": "div.hero-gradient > div.cover-hero-layout > div.cover-hero-side > div.cover-portrait-card",
+    "msg": "left edge at 19px, 5px off the page margin at 24px (61 elements, like h2.section-title)",
+    "fix": "move it onto the page margin, or the column edge its section uses",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-grid"
+    ],
+    "wheres": [
+     "div.hero-gradient > div.cover-hero-layout > div.cover-hero-side > div.cover-portrait-card"
+    ]
+   },
+   {
+    "check": "off-grid",
+    "where": "div:nth-of-type(1) > div.flex.flex-col > div.border-l-4.border-orange-500:nth-of-type(1) > h3.text-4xl.font-bold \"18.4万+\"",
+    "msg": "left edge at 44px, 20px off the page margin at 24px (61 elements, like div.sub-header.mt-0); 3 more in this section off the grid too (p.text-gray-600.uppercase at 44px, h3.text-4xl.font-bold at 44px, p.text-gray-600.uppercase at 44px)",
+    "fix": "move it onto the page margin, or the column edge its section uses",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "off-grid"
+    ],
+    "wheres": [
+     "div:nth-of-type(1) > div.flex.flex-col > div.border-l-4.border-orange-500:nth-of-type(1) > h3.text-4xl.font-bold \"18.4万+\""
+    ]
+   },
+   {
+    "check": "right-edge",
+    "where": "div.hero-gradient > div.cover-hero-layout > div.cover-hero-side > div.cover-portrait-card",
+    "msg": "its right edge runs 5px past the content's right edge (366px, where 15 boxes end)",
+    "fix": "end it on the content's right edge, like the other blocks of its section",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "right-edge"
+    ],
+    "wheres": [
+     "div.hero-gradient > div.cover-hero-layout > div.cover-hero-side > div.cover-portrait-card"
+    ]
+   },
+   {
+    "check": "contrast",
+    "where": "section#education > div.mt-10.grid > div.education-card.p-8:nth-of-type(1) > p.education-date.text-sm \"2025.09 - 2028.06\"",
+    "msg": "body text over a effect reads at 3.8:1 at its worst tenth (needs 4.5:1), on a busy ground (and 5 more like it: \"品牌增长 · 2026.07 - 2026.09\", \"将工作经历中的代表成果与个人独立案例拆开展示，重\", \"广州凡岛网络科技有限公司 · 在职项目成果\", \"策略性占位与心智渗透。在抖音高优达人评论区，以神\", ...)",
+    "fix": "put the text on a calm part of the picture, or on a solid panel",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "contrast"
+    ],
+    "wheres": [
+     "section#education > div.mt-10.grid > div.education-card.p-8:nth-of-type(1) > p.education-date.text-sm \"2025.09 - 2028.06\""
+    ]
+   },
+   {
+    "check": "contrast",
+    "where": "section#education > div.mt-10.grid > div.education-card.p-8:nth-of-type(2) > p.education-date.text-sm \"2022.09 - 2026.06\"",
+    "msg": "body text over a effect reads at 3.8:1 at its worst tenth (needs 4.5:1) (and 5 more like it: \"个人课题\", \"小组课题\", \"Codex ChatGPT Perplexity\", \"PR剪辑 剪映 Runway / Sora 秀米\", ...)",
+    "fix": "put the text on a calm part of the picture, or on a solid panel",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "contrast"
+    ],
+    "wheres": [
+     "section#education > div.mt-10.grid > div.education-card.p-8:nth-of-type(2) > p.education-date.text-sm \"2022.09 - 2026.06\""
+    ]
+   },
+   {
+    "check": "empty-area",
+    "where": "section#skills \"技能清单 05\"",
+    "msg": "58% of the section is empty: 61% beside content that covers under half the container, in its 1121px of rows (WARN over 35%, FAIL over 50%)",
+    "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+    "widths": [
+     390
+    ],
+    "from": "consistency",
+    "ids": [
+     "empty-area"
+    ],
+    "wheres": [
+     "section#skills \"技能清单 05\""
+    ]
+   },
+   {
+    "check": "container",
+    "where": "page",
+    "msg": "no .wrap",
+    "fix": "put the content in one .wrap",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "layout",
+    "ids": [
+     "container"
+    ],
+    "wheres": [
+     "page"
+    ]
+   }
+  ],
+  "warns": [
+   {
+    "check": "copy-headline",
+    "where": "div.cover-hero-layout > div.cover-hero-copy > div.cover-copy-stack > h1.cover-display-title \"Personal Portfolio\"",
+    "msg": "\"Personal Portfolio\": no category known to check it against (pass --category, or write the <title> as \"Name: what it is for whom\")",
+    "fix": "put the category noun in the h1 (and who it is for, or where), in 2 to 8 words",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-headings",
+    "where": "section#skills > div.mt-10.grid > div.flex.flex-col:nth-of-type(1) > h3.font-bold.text-lg \"AI 生产力\"",
+    "msg": "\"AI 生产力\" names no product, part, place or section (the one brand line a page may have)",
+    "fix": "name the thing in every heading: the product, a part, the place or a section noun",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-buttons",
+    "where": "div#mobile-menu > nav.sidebar-nav > a.nav-item:nth-of-type(1) \"封面 00\"",
+    "msg": "\"封面 00\" does not start with a verb (book, buy, try, start, get, see...) (and 10 more like it: \"教育背景 01\", \"工作经历 02\", \"项目经验 03\", \"运营数据 04\", ...)",
+    "fix": "label buttons with a verb and what the visitor gets (\"Book a room\", \"Start free trial\")",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-actions",
+    "where": "(the page)",
+    "msg": "11 different button labels on the page (at most 10)",
+    "fix": "few actions, one wording: at most 2 in the hero, the main action word for word in nav, hero and close",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "col-edge",
+    "where": "section#portfolio > div.mt-12:nth-of-type(4) > div.project-highlight-grid > article.project-highlight-card:nth-of-type(2) \"小组课题 与 6 名成员协作完成 Workbuddy 深度用户研究报告。本人负责\"",
+    "msg": "the second column starts at 5 places: 730px (section#portfolio), 744px (section#education), 752px (section#operations), 800px (section#contact), 851px (section#cover)",
+    "fix": "start the second column of every split on the same one or two grid columns",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "contrast",
+    "where": "div.section-header > div.section-title-wrapper > h2.section-title > sup \"01\"",
+    "msg": "large text over a effect reads at 1.2:1 at its worst tenth (needs 3:1) (and 3 more like it: \"03\", \"05\", \"06\")",
+    "fix": "put the text on a calm part of the picture, or on a solid panel",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "contrast",
+    "where": "div.section-header > div.section-title-wrapper > h2.section-title > sup \"02\"",
+    "msg": "large text over a effect reads at 1.3:1 at its worst tenth (needs 3:1), on a busy ground (and 1 more like it: \"04\")",
+    "fix": "put the text on a calm part of the picture, or on a solid panel",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "orphan",
+    "where": "section#skills > div.mt-10.grid > div.flex.flex-col:nth-of-type(1) > p.text-gray-600 \"Codex ChatGPT Perplexity Midjourney Veo\"",
+    "msg": "its last line holds only \"Veo\"",
+    "fix": "rebalance the text (text-wrap: pretty, or a shorter line) so the last line holds more than one short word",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "one-screen",
+    "where": "section#education \"教育背景 01\"",
+    "msg": "2 sections are shorter than the screen, so the next one's heading or picture shows with them: \"教育背景 01\" is 568px of the 804px under the nav, and \"工作经历 02\" shows below it (\"技能清单 05\")",
+    "fix": "give each section the screen (min-height: 100svh less the nav, its content centred), or join two short ones into one",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "skip-link",
+    "where": "div#mobile-menu > nav.sidebar-nav > a.nav-item:nth-of-type(1) \"封面00\"",
+    "msg": "the first Tab stop is \"封面00\", not a skip link: a keyboard user tabs through the whole nav on every visit",
+    "fix": "add the starter's skip link as the header's first child: <a class=\"skip-link\" href=\"#top\">Skip to content</a>",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "card-visual",
+    "where": "section#contact > div.contact-grid > div.contact-list \"邮箱 18922028036@163.com 微信 2314138946 手机号\"",
+    "msg": "3 cards hold only text: no picture, icon, UI fragment or effect in any of them",
+    "fix": "give the cards a visual: an inset panel with a UI fragment, a photograph or real icons",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "cta",
+    "where": "section#operations \"运营数据 04\"",
+    "msg": "a section over 1.5 screens long with no link or button in it",
+    "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "busy-ground",
+    "where": "div.cover-hero-copy > div.cover-copy-stack > div.cover-intro > p.cover-role \"品牌传播 · 海外推广 · GEO 优化 · 舆情分析\"",
+    "msg": "text over a busy part of a effect (its luminance varies by 0.14 under the words) (and 2 more like it: \"推动品牌 AI 可见度从 3% 提升到 28%；\", \"杭州至简动力科技有限公司\")",
+    "fix": "move the text to a calm part of the picture, or put it on a panel",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#experience / section#portfolio",
+    "msg": "124px between these sections, +27% against the median 98px",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "stranded-action",
+    "where": "section#portfolio > div.mt-12:nth-of-type(4) > div.project-resource-grid > a.project-resource-link:nth-of-type(4) \"Workbuddy 用户研究课题 下载 PDF · 深度用户研究报告\"",
+    "msg": "stands 333px down from the nearest text of its block (\"与 6 名成员协作完成 Workbuddy 深度用户研究报告\")",
+    "fix": "put the button under or beside the text it belongs to",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-tile",
+    "where": "section#experience \"工作经历 02\"",
+    "msg": "the section is 787px tall (0.93 screens at 390x844), shorter than the screen: its tile (the screen from its top) shows 787px of it and only 57px of the next section's ground (\"项目经验 03\"), none of its content",
+    "fix": "set every section after the hero to one screen or two (height: calc(var(--h,1) * 100vh)) and fit its content above --padb",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-numbered",
+    "msg": "6 step numbers",
+    "fix": "number only steps that happen in order (references/copy-tells.md)",
+    "widths": [],
+    "from": "copy",
+    "where": "(the copy)",
+    "exact": false
+   }
+  ],
+  "crashed": [],
+  "seconds": {
+   "consistency": 190,
+   "layout": 14
+  }
+ },
+ "open": [
+  {
+   "check": "no-visual",
+   "where": "section#experience \"工作经历 02\"",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "section#experience \"工作经历 02\""
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "section#skills \"技能清单 05\"",
+   "msg": "no picture, effect or mock in this section; a feature section needs a visual",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "section#skills \"技能清单 05\""
+   ]
+  },
+  {
+   "check": "cta",
+   "where": "section#cover",
+   "msg": "the hero has no button (the nav's does not count)",
+   "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "cta"
+   ],
+   "wheres": [
+    "section#cover"
+   ]
+  },
+  {
+   "check": "cta",
+   "where": "section#contact \"联系我 06\"",
+   "msg": "the last section before the footer ends with no button",
+   "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "cta"
+   ],
+   "wheres": [
+    "section#contact \"联系我 06\""
+   ]
+  },
+  {
+   "check": "heading-scale",
+   "where": "div:nth-of-type(1) > div.flex.flex-col > div.border-l-4.border-orange-500:nth-of-type(1) > h3.text-4xl.font-bold \"18.4万+\"",
+   "msg": "h3 headings in 2 sizes, 18px (\"AI 生产力\") to 48px (x2.67)",
+   "fix": "size headings by level: the h1 largest, one size per level, each level below the one above",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "heading-scale"
+   ],
+   "wheres": [
+    "div:nth-of-type(1) > div.flex.flex-col > div.border-l-4.border-orange-500:nth-of-type(1) > h3.text-4xl.font-bold \"18.4万+\""
+   ]
+  },
+  {
+   "check": "contrast",
+   "where": "div#mobile-menu > nav.sidebar-nav > a.nav-item:nth-of-type(1) \"封面 00\"",
+   "msg": "body text over a effect reads at 2.7:1 at its worst tenth (needs 4.5:1) (and 10 more like it: \"00\", \"2025.09 - 2028.06\", \"品牌公关 · 2026.10 - 2027.01\", \"品牌增长 · 2026.07 - 2026.09\", ...)",
+   "fix": "put the text on a calm part of the picture, or on a solid panel",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "contrast"
+   ],
+   "wheres": [
+    "div#mobile-menu > nav.sidebar-nav > a.nav-item:nth-of-type(1) \"封面 00\""
+   ]
+  },
+  {
+   "check": "contrast",
+   "where": "section#portfolio > div.mt-12:nth-of-type(3) > div.mt-6.text-gray-600 > p \"账号 @斜一下的至秦：从0到1孵化小红书校园生活类账号。完成239篇爆款笔记撰写\"",
+   "msg": "body text over a effect reads at 4.4:1 at its worst tenth (needs 4.5:1), on a busy ground (and 1 more like it: \"策略性占位与心智渗透。在抖音高优达人评论区，以神\")",
+   "fix": "put the text on a calm part of the picture, or on a solid panel",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "contrast"
+   ],
+   "wheres": [
+    "section#portfolio > div.mt-12:nth-of-type(3) > div.mt-6.text-gray-600 > p \"账号 @斜一下的至秦：从0到1孵化小红书校园生活类账号。完成239篇爆款笔记撰写\""
+   ]
+  },
+  {
+   "check": "effects-fit",
+   "where": "(the page)",
+   "msg": "a service page asks for 1 WebGL context (div#grainient-bg, canvas): shader effects are for tech, software, AI and gaming pages",
+   "fix": "take the WebGL effects off this page: lead with its photographs, flat colour and type (effects are for tech, software, AI and gaming pages)",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "effects-fit"
+   ],
+   "wheres": [
+    "(the page)"
+   ]
+  },
+  {
+   "check": "effect-kind",
+   "where": "(the page)",
+   "msg": "a service page (--type) moves with the scroll: scroll libraries or timelines (scroll-timeline, view-timeline): effects fit tech, gaming and software pages and a product with a technical subject, never a place, shop or service page (house rule)",
+   "fix": "take the scroll-driven motion off: on a place, shop or service page the page scrolls plainly and the parts sit still",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "effect-kind"
+   ],
+   "wheres": [
+    "(the page)"
+   ]
+  },
+  {
+   "check": "phone-number",
+   "where": "div.contact-grid > div.contact-list > div.contact-card:nth-of-type(3) > a.contact-value \"tel:18922028036\"",
+   "msg": "a tel: link calls a number in a real dialable format: \"tel:18922028036\"; a visitor can dial it and reach a stranger",
+   "fix": "drop the number and its tel: link (a \"Request a call\" form may stand in), unless the brief gives the number",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "phone-number"
+   ],
+   "wheres": [
+    "div.contact-grid > div.contact-list > div.contact-card:nth-of-type(3) > a.contact-value \"tel:18922028036\""
+   ]
+  },
+  {
+   "check": "section-tile",
+   "where": "section#experience \"工作经历 02\"",
+   "msg": "the section is 753px tall (0.84 screens at 1440x900), shorter than the screen: its tile (the screen from its top) shows 753px of it and 147px of the next section, its heading \"项目经验 03\" on screen",
+   "fix": "set every section after the hero to one screen or two (height: calc(var(--h,1) * 100vh)) and fit its content above --padb",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-tile"
+   ],
+   "wheres": [
+    "section#experience \"工作经历 02\""
+   ]
+  },
+  {
+   "check": "focus-visible",
+   "where": "section#experience > div.experience-list:nth-of-type(2) > div.experience-item:nth-of-type(1) > button.experience-toggle \"杭州至简动力科技有限公司 品牌公关 · 2026.10 - 2027.01\"",
+   "msg": "Tab stop 10, button \"杭州至简动力科技有限公司 品牌公关 · 2026.10 - 2027.01\": the focus lands on something you cannot see",
+   "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "focus-visible"
+   ],
+   "wheres": [
+    "section#experience > div.experience-list:nth-of-type(2) > div.experience-item:nth-of-type(1) > button.experience-toggle \"杭州至简动力科技有限公司 品牌公关 · 2026.10 - 2027.01\""
+   ]
+  },
+  {
+   "check": "focus-visible",
+   "where": "section#portfolio > div.mt-12:nth-of-type(4) > div.project-resource-grid:nth-of-type(3) > a.project-resource-link:nth-of-type(1) \"打开 QClaw 小红书种草传播方案 PDF\"",
+   "msg": "Tab stop 14, a \"打开 QClaw 小红书种草传播方案 PDF\": the focus lands on something you cannot see",
+   "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "focus-visible"
+   ],
+   "wheres": [
+    "section#portfolio > div.mt-12:nth-of-type(4) > div.project-resource-grid:nth-of-type(3) > a.project-resource-link:nth-of-type(1) \"打开 QClaw 小红书种草传播方案 PDF\""
+   ]
+  },
+  {
+   "check": "focus-visible",
+   "where": "section#portfolio > div.mt-12:nth-of-type(4) > div.project-resource-grid:nth-of-type(3) > a.project-resource-link:nth-of-type(2) \"打开 腾讯广告创享会新闻稿传播课题 PDF\"",
+   "msg": "Tab stop 15, a \"打开 腾讯广告创享会新闻稿传播课题 PDF\": the focus lands on something you cannot see",
+   "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "focus-visible"
+   ],
+   "wheres": [
+    "section#portfolio > div.mt-12:nth-of-type(4) > div.project-resource-grid:nth-of-type(3) > a.project-resource-link:nth-of-type(2) \"打开 腾讯广告创享会新闻稿传播课题 PDF\""
+   ]
+  },
+  {
+   "check": "focus-visible",
+   "where": "div.contact-grid:nth-of-type(2) > div.contact-list:nth-of-type(2) > div.contact-card:nth-of-type(1) > a.contact-value \"18922028036@163.com\"",
+   "msg": "Tab stop 18, a \"18922028036@163.com\": the focus lands on something you cannot see",
+   "fix": "keep the kit's ring (system.css :focus-visible, 2px in --action, there at once); a control that hides itself shows on focus",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "focus-visible"
+   ],
+   "wheres": [
+    "div.contact-grid:nth-of-type(2) > div.contact-list:nth-of-type(2) > div.contact-card:nth-of-type(1) > a.contact-value \"18922028036@163.com\""
+   ]
+  },
+  {
+   "check": "moment-none",
+   "where": "(the page)",
+   "msg": "a service page (--type) deals no moment: every kind carries one, two on a long page (moments.md)",
+   "fix": "deal one (moments.mjs pick --page service --photo) and mount it in its own section",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "moment-none"
+   ],
+   "wheres": [
+    "(the page)"
+   ]
+  },
+  {
+   "check": "hero-screen",
+   "where": "section#cover \"卢泓臻 Personal Portfolio 品牌传播 · 海外推广 · GEO\"",
+   "msg": "the hero ends at 992px on a 900px screen, 92px below the fold: it ends at the fold, 1px either way (SR-1)",
+   "fix": "make the hero exactly one screen (height: 100svh, its content fitted inside), never taller or shorter",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "hero-screen"
+   ],
+   "wheres": [
+    "section#cover \"卢泓臻 Personal Portfolio 品牌传播 · 海外推广 · GEO\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#portfolio \"项目经验03 将工作经历中的代表成果与个人独立案例拆开展示，重点呈现项目背景、执\"",
+   "msg": "the section is 3490px tall (3.9 screens), 1690px over two screens (1800px): every section after the hero is one screen or two, 2px either way (SR-2)",
+   "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height"
+   ],
+   "wheres": [
+    "section#portfolio \"项目经验03 将工作经历中的代表成果与个人独立案例拆开展示，重点呈现项目背景、执\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#education \"教育背景01 山东大学 · 硕士 宗教学 主修课程：社会调查方法、宗教学概论 2\"",
+   "msg": "the section is 568px tall (0.6 screens), 332px short of one screen (900px): every section after the hero is one screen or two, 2px either way (SR-2)",
+   "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height"
+   ],
+   "wheres": [
+    "section#education \"教育背景01 山东大学 · 硕士 宗教学 主修课程：社会调查方法、宗教学概论 2\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#skills \"技能清单05 积极拥抱前沿工具与技术变革，将设计美学与AI工作流完美结合，极大提\"",
+   "msg": "the section is 570px tall (0.6 screens), 330px short of one screen (900px): every section after the hero is one screen or two, 2px either way (and 3 more like it: \"联系我06 如果你希望进一步了解我的项目经历、传\", \"运营数据04 数据是检验策略的唯一真理。通过精准\", \"工作经历02 从机器人品牌出海到快消内容投放，覆\") (SR-2)",
+   "fix": "set the section to one screen or two (height: calc(var(--h,1) * 100vh), --h 1 or 2) and cut or split its content to fit",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height"
+   ],
+   "wheres": [
+    "section#skills \"技能清单05 积极拥抱前沿工具与技术变革，将设计美学与AI工作流完美结合，极大提\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#operations \"运营数据04 数据是检验策略的唯一真理。通过精准把控点击率、互动量与转化指标，驱\"",
+   "msg": "the section starts at 5803px, 403px below the screen grid (6 x 900px): sections start on whole screens (SR-2)",
+   "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height"
+   ],
+   "wheres": [
+    "section#operations \"运营数据04 数据是检验策略的唯一真理。通过精准把控点击率、互动量与转化指标，驱\""
+   ]
+  },
+  {
+   "check": "section-height",
+   "where": "section#contact \"联系我06 如果你希望进一步了解我的项目经历、传播策略能力或合作方式，可以通过以\"",
+   "msg": "the section starts at 7529px, 329px below the screen grid (8 x 900px): sections start on whole screens (and 4 more like it: \"技能清单05 积极拥抱前沿工具与技术变革，将设计\", \"工作经历02 从机器人品牌出海到快消内容投放，覆\", \"卢泓臻 Personal Portfolio 品\") (SR-2)",
+   "fix": "make every section above it exactly one or two screens tall, so this one starts on a whole screen",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-height"
+   ],
+   "wheres": [
+    "section#contact \"联系我06 如果你希望进一步了解我的项目经历、传播策略能力或合作方式，可以通过以\""
+   ]
+  },
+  {
+   "check": "section-air",
+   "where": "section#experience > div.experience-list \"杭州至简动力科技有限公司 品牌公关 · 2026.10 - 2027.01 工作\"",
+   "msg": "a top border across 100% of the container, between the section's content: sections and their parts are told apart by air and ground, not lines (SR-3)",
+   "fix": "take the rule out: sections and their parts are parted by their ground and the air between them",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "section-air"
+   ],
+   "wheres": [
+    "section#experience > div.experience-list \"杭州至简动力科技有限公司 品牌公关 · 2026.10 - 2027.01 工作\""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "section#portfolio > div.section-header > div.section-title-wrapper > h2.section-title \"项目经验03\"",
+   "msg": "the screen at scroll 1800px (stride 2) shows 387px of section 4 and the heading of section 4 whole and the content of 2 sections, over 24px each beside section 3: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "section#portfolio > div.section-header > div.section-title-wrapper > h2.section-title \"项目经验03\""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "section#experience > div.section-header > div.section-title-wrapper > h2.section-title \"工作经历02\"",
+   "msg": "the screen at scroll 992px (the top of section 2) shows 332px of section 3 and the heading of section 3 whole and the content of 2 sections, over 24px each beside section 2: a screen shows one section (another may peek 8px, 24px WARN) (SR-4)",
+   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "section#experience > div.section-header > div.section-title-wrapper > h2.section-title \"工作经历02\""
+   ]
+  },
+  {
+   "check": "one-section",
+   "where": "section#contact > div.section-header > div.section-title-wrapper > h2.section-title \"联系我06\"",
+   "msg": "the screen at scroll 6958px (the top of section 6) shows 329px of section 7 and the heading of section 7 whole and the content of 2 sections, over 24px each beside section 6: a screen shows one section (another may peek 8px, 24px WARN) (and 6 more like it: scroll 5400px, scroll 6300px, scroll 900px) (SR-4)",
+   "fix": "make each section exactly one screen or two, so a screen shows one section and no neighbour peeks",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-section"
+   ],
+   "wheres": [
+    "section#contact > div.section-header > div.section-title-wrapper > h2.section-title \"联系我06\""
+   ]
+  },
+  {
+   "check": "one-heading",
+   "where": "section#experience > div.section-header > div.section-title-wrapper > h2.section-title \"工作经历02\"",
+   "msg": "headings of two sections show whole on one screen at 7 of 145 scroll positions (4.8%; at scroll 850, 900, 950, 6800px), here with \"教育背景01\": at most 3% on a desktop (SR-5)",
+   "fix": "make the sections one screen tall so their headings sit a screen apart and two never share one",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "one-heading"
+   ],
+   "wheres": [
+    "section#experience > div.section-header > div.section-title-wrapper > h2.section-title \"工作经历02\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "section#cover \"卢泓臻 Personal Portfolio 品牌传播 · 海外推广 · GEO\"",
+   "msg": "the content of section 1 runs 140px from the left and 140px from the right (read from its outermost blocks: no .wrap): the page's container starts at 64px; the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)",
+   "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "section#cover \"卢泓臻 Personal Portfolio 品牌传播 · 海外推广 · GEO\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "div.layout-container > header.header-shell \"LuHongZhen 封面00 教育背景01 工作经历02 项目经验03 运营数\"",
+   "msg": "the nav's content runs 43px from the left and 43px from the right (read from its outermost blocks: no .wrap): the page's container starts at 64px; the margin is 64-120px at 1440px (one container, equal margins, 2px either way) (SR-6)",
+   "fix": "use one container on every section and the nav (.wrap): one margin left and right, 64-120px on a desktop, 16-24px on a phone",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "div.layout-container > header.header-shell \"LuHongZhen 封面00 教育背景01 工作经历02 项目经验03 运营数\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "div#grainient-bg",
+   "msg": "a <div> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (SR-6)",
+   "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "div#grainient-bg"
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "div.layout-container \"LuHongZhen 封面00 教育背景01 工作经历02 项目经验03 运营数\"",
+   "msg": "a <div> at the top of the page, outside header.nav, main, footer.closing and nav.actionbar (and 7 more like it: \"卢泓臻 Personal Portfolio 品\", \"教育背景01 山东大学 · 硕士 宗教学 主修课\", \"工作经历02 从机器人品牌出海到快消内容投放，覆\") (SR-6)",
+   "fix": "build the page as header.nav, a main of sections (each one in-flow .wrap plus background layers) and footer.closing",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "div.layout-container \"LuHongZhen 封面00 教育背景01 工作经历02 项目经验03 运营数\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "aside#site-header \"LuHongZhen 封面00 教育背景01 工作经历02 项目经验03 运营数\"",
+   "msg": "a box runs 20-1420px, outside the container lines of the nav at 64-1376px: full width is for background layers and grounds only (SR-6)",
+   "fix": "keep it inside the container lines (.wrap): full width is for background layers and grounds only",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "aside#site-header \"LuHongZhen 封面00 教育背景01 工作经历02 项目经验03 运营数\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "aside#site-header > div.sidebar-logo > span.tracking-tight \"LuHongZhen\"",
+   "msg": "\"LuHongZhen\" runs 43-165px, outside the container lines of the nav at 64-1376px: full width is for background layers and grounds only (and 2 more like it: \"联系我06\", \"06\") (SR-6)",
+   "fix": "keep it inside the container lines (.wrap): full width is for background layers and grounds only",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "aside#site-header > div.sidebar-logo > span.tracking-tight \"LuHongZhen\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "div.section-header > div.section-title-wrapper > h2.section-title > sup \"01\"",
+   "msg": "5 text blocks start on a left line at x 323, 259px from the container's left: text starts on the container's left, or on one split line (x 621, 732, 843) (also \"02\", \"03\", \"04\") (SR-6)",
+   "fix": "start the text on the container's left, or on the one split line every split shares",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "div.section-header > div.section-title-wrapper > h2.section-title > sup \"01\""
+   ]
+  },
+  {
+   "check": "container-edges",
+   "where": "div.section-header > div.section-title-wrapper > h2.section-title > sup \"06\"",
+   "msg": "1 text block starts on a left line at x 260, 196px from the container's left: text starts on the container's left, or on one split line (x 621, 732, 843) (and 4 more like it: x 193, x 178, x 130) (SR-6)",
+   "fix": "start the text on the container's left, or on the one split line every split shares",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "container-edges"
+   ],
+   "wheres": [
+    "div.section-header > div.section-title-wrapper > h2.section-title > sup \"06\""
+   ]
+  },
+  {
+   "check": "split-pair",
+   "where": "section#contact > div.contact-grid \"我目前聚焦于品牌传播、公关策划、舆情分析与内容增长方向的机会，也欢迎围绕实习、校\"",
+   "msg": "the split's columns are off the page's one pair of lines: its right column starts at x 800, the first split's at 851; its right column starts at x 800, on none of the split lines 621 (k=5), 732 (k=6), 843 (k=7) (SR-8)",
+   "fix": "start every split's right column on one shared line (wrap.left + k x (width + 24) / 12, k 5, 6 or 7; 6 on a place page) and end the left one 24px before it",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "split-pair"
+   ],
+   "wheres": [
+    "section#contact > div.contact-grid \"我目前聚焦于品牌传播、公关策划、舆情分析与内容增长方向的机会，也欢迎围绕实习、校\""
+   ]
+  },
+  {
+   "check": "split-pair",
+   "where": "section#cover > div.hero-gradient > div.cover-hero-layout \"卢泓臻 Personal Portfolio 品牌传播 · 海外推广 · GEO\"",
+   "msg": "the split's columns are off the page's one pair of lines: its right column starts at x 851, on none of the split lines 633 (k=5), 732 (k=6), 831 (k=7) (SR-8)",
+   "fix": "start every split's right column on one shared line (wrap.left + k x (width + 24) / 12, k 5, 6 or 7; 6 on a place page) and end the left one 24px before it",
+   "widths": [
+    1440
+   ],
+   "from": "consistency",
+   "ids": [
+    "split-pair"
+   ],
+   "wheres": [
+    "section#cover > div.hero-gradient > div.cover-hero-layout \"卢泓臻 Personal Portfolio 品牌传播 · 海外推广 · GEO\""
+   ]
+  },
+  {
+   "check": "no-visual",
+   "where": "section#portfolio \"项目经验 03\"",
+   "msg": "pictures, effects and mocks cover 14% of this section; a feature section needs a visual (about 25% or more)",
+   "fix": "give the section a visual: a UI fragment on a ground, real icons, or a photograph that fits",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "no-visual"
+   ],
+   "wheres": [
+    "section#portfolio \"项目经验 03\""
+   ]
+  },
+  {
+   "check": "heading-scale",
+   "where": "section#education > div.section-header > div.section-title-wrapper > h2.section-title \"教育背景 01\"",
+   "msg": "an h2 at 48px, as large as the h1 (44.8px) or larger (and 2 more like it: \"工作经历 02\", \"项目经验 03\")",
+   "fix": "size headings by level: the h1 largest, one size per level, each level below the one above",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "heading-scale"
+   ],
+   "wheres": [
+    "section#education > div.section-header > div.section-title-wrapper > h2.section-title \"教育背景 01\""
+   ]
+  },
+  {
+   "check": "off-grid",
+   "where": "div.hero-gradient > div.cover-hero-layout > div.cover-hero-side > div.cover-portrait-card",
+   "msg": "left edge at 19px, 5px off the page margin at 24px (61 elements, like h2.section-title)",
+   "fix": "move it onto the page margin, or the column edge its section uses",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-grid"
+   ],
+   "wheres": [
+    "div.hero-gradient > div.cover-hero-layout > div.cover-hero-side > div.cover-portrait-card"
+   ]
+  },
+  {
+   "check": "off-grid",
+   "where": "div:nth-of-type(1) > div.flex.flex-col > div.border-l-4.border-orange-500:nth-of-type(1) > h3.text-4xl.font-bold \"18.4万+\"",
+   "msg": "left edge at 44px, 20px off the page margin at 24px (61 elements, like div.sub-header.mt-0); 3 more in this section off the grid too (p.text-gray-600.uppercase at 44px, h3.text-4xl.font-bold at 44px, p.text-gray-600.uppercase at 44px)",
+   "fix": "move it onto the page margin, or the column edge its section uses",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "off-grid"
+   ],
+   "wheres": [
+    "div:nth-of-type(1) > div.flex.flex-col > div.border-l-4.border-orange-500:nth-of-type(1) > h3.text-4xl.font-bold \"18.4万+\""
+   ]
+  },
+  {
+   "check": "right-edge",
+   "where": "div.hero-gradient > div.cover-hero-layout > div.cover-hero-side > div.cover-portrait-card",
+   "msg": "its right edge runs 5px past the content's right edge (366px, where 15 boxes end)",
+   "fix": "end it on the content's right edge, like the other blocks of its section",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "right-edge"
+   ],
+   "wheres": [
+    "div.hero-gradient > div.cover-hero-layout > div.cover-hero-side > div.cover-portrait-card"
+   ]
+  },
+  {
+   "check": "contrast",
+   "where": "section#education > div.mt-10.grid > div.education-card.p-8:nth-of-type(1) > p.education-date.text-sm \"2025.09 - 2028.06\"",
+   "msg": "body text over a effect reads at 3.8:1 at its worst tenth (needs 4.5:1), on a busy ground (and 5 more like it: \"品牌增长 · 2026.07 - 2026.09\", \"将工作经历中的代表成果与个人独立案例拆开展示，重\", \"广州凡岛网络科技有限公司 · 在职项目成果\", \"策略性占位与心智渗透。在抖音高优达人评论区，以神\", ...)",
+   "fix": "put the text on a calm part of the picture, or on a solid panel",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "contrast"
+   ],
+   "wheres": [
+    "section#education > div.mt-10.grid > div.education-card.p-8:nth-of-type(1) > p.education-date.text-sm \"2025.09 - 2028.06\""
+   ]
+  },
+  {
+   "check": "contrast",
+   "where": "section#education > div.mt-10.grid > div.education-card.p-8:nth-of-type(2) > p.education-date.text-sm \"2022.09 - 2026.06\"",
+   "msg": "body text over a effect reads at 3.8:1 at its worst tenth (needs 4.5:1) (and 5 more like it: \"个人课题\", \"小组课题\", \"Codex ChatGPT Perplexity\", \"PR剪辑 剪映 Runway / Sora 秀米\", ...)",
+   "fix": "put the text on a calm part of the picture, or on a solid panel",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "contrast"
+   ],
+   "wheres": [
+    "section#education > div.mt-10.grid > div.education-card.p-8:nth-of-type(2) > p.education-date.text-sm \"2022.09 - 2026.06\""
+   ]
+  },
+  {
+   "check": "empty-area",
+   "where": "section#skills \"技能清单 05\"",
+   "msg": "58% of the section is empty: 61% beside content that covers under half the container, in its 1121px of rows (WARN over 35%, FAIL over 50%)",
+   "fix": "fill the section: a picture or a second column beside the words, or more of its own content; the section stays one or two screens tall (T-height)",
+   "widths": [
+    390
+   ],
+   "from": "consistency",
+   "ids": [
+    "empty-area"
+   ],
+   "wheres": [
+    "section#skills \"技能清单 05\""
+   ]
+  },
+  {
+   "check": "container",
+   "where": "page",
+   "msg": "no .wrap",
+   "fix": "put the content in one .wrap",
+   "widths": [
+    1440,
+    390
+   ],
+   "from": "layout",
+   "ids": [
+    "container"
+   ],
+   "wheres": [
+    "page"
+   ]
+  }
+ ],
+ "waived": [],
+ "warnCount": 17,
+ "at": "2026-11-15T08:51:34.668Z",
+ "openTold": true
+}

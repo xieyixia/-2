@@ -39,7 +39,7 @@
         :root {
             --brand-orange: #ee8a27;
             --text-main: #171217;
-            --text-muted: #5b5855;
+            --text-muted: #4c4945;
             --text-body: #3a3733;
             --border-color: rgba(68, 59, 48, 0.09);
             --page-base: #f5f1ea;
@@ -136,8 +136,8 @@
             gap: 1rem;
             padding: 0.95rem 1rem;
             border-radius: 1.35rem;
-            border: 1px solid rgba(255, 255, 255, 0.24);
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.1) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0.5) 100%);
             backdrop-filter: blur(18px) saturate(138%);
             -webkit-backdrop-filter: blur(18px) saturate(138%);
             box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
@@ -268,7 +268,7 @@
         }
 
         .nav-item:focus-visible {
-            outline: none;
+            outline-offset: 2px;
         }
 
         .nav-number {
@@ -313,7 +313,7 @@
 
         @media (min-width: 768px) {
             .content-section {
-                padding: 5rem 4rem;
+                padding: 6rem 4rem;
             }
         }
 
@@ -437,6 +437,10 @@
             align-items: center;
             min-height: inherit;
             padding: clamp(2rem, 3vw, 2.6rem);
+        }
+
+        @media (max-width: 639px) {
+            .cover-hero-layout { padding: 0.5rem 1.5rem 1.5rem; }
         }
 
         .cover-hero-copy {
@@ -636,15 +640,15 @@
         }
 
         .education-card h4 {
-            color: #58677b;
+            color: #7d5722;
         }
 
         .education-card p {
-            color: #66758a;
+            color: #453d33;
         }
 
         .education-card .education-date {
-            color: #8aa0bc;
+            color: #6f6455;
         }
 
         /* Hide scrollbar for a cleaner look but keep functionality */
@@ -1175,6 +1179,12 @@
         /* ---- Accessibility & interaction polish ---- */
         a, button, [role="button"] { touch-action: manipulation; }
 
+        .experience-toggle:focus-visible,
+        .project-resource-link:focus-visible,
+        .contact-value:focus-visible {
+            outline-offset: -2px;
+        }
+
         :where(a, button, summary):focus-visible {
             outline: 2px solid #a2560b !important;
             outline-offset: 3px;
@@ -1206,8 +1216,7 @@
 
 <div class="layout-container">
     <!-- Main Content Area -->
-    <main class="main-content">
-        <div class="header-shell">
+    <header class="header-shell">
             <aside id="site-header" class="sidebar transition-all duration-300">
                 <div class="sidebar-logo">
                     <span class="tracking-tight">LuHongZhen</span>
@@ -1230,8 +1239,9 @@
                     </nav>
                 </div>
             </aside>
-        </div>
-        
+</header>
+
+<main class="main-content">
         <!-- Hero Cover Section -->
         <section id="cover" class="cover-section">
             <div class="hero-gradient">
@@ -1308,16 +1318,16 @@
             
             <div class="mt-10 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                 <div class="education-card p-8 md:p-10">
-                    <h3 class="text-sm text-gray-500 font-semibold mb-3">山东大学 · 硕士</h3>
+                    <h3 class="text-sm text-gray-600 font-semibold mb-3">山东大学 · 硕士</h3>
                     <p class="text-3xl font-bold mb-4">宗教学</p>
                     <p class="text-gray-600 mb-8">主修课程：社会调查方法、宗教学概论</p>
-                    <p class="education-date text-sm text-gray-400">2025.09 - 2028.06</p>
+                    <p class="education-date text-sm text-gray-600">2025.09 - 2028.06</p>
                 </div>
                 <div class="education-card p-8 md:p-10">
-                    <h3 class="text-sm text-gray-500 font-semibold mb-3">山东大学 · 本科</h3>
+                    <h3 class="text-sm text-gray-600 font-semibold mb-3">山东大学 · 本科</h3>
                     <p class="text-3xl font-bold mb-4">哲学</p>
                     <p class="text-gray-600 mb-8">荣誉：23年全国英语竞赛三等奖，24年全国英语竞赛二等奖。CET-6 (613分)</p>
-                    <p class="education-date text-sm text-gray-400">2022.09 - 2026.06</p>
+                    <p class="education-date text-sm text-gray-600">2022.09 - 2026.06</p>
                 </div>
             </div>
         </section>
@@ -1467,7 +1477,7 @@
             </div>
 
             <div class="mt-8 md:mt-16">
-                <p class="text-xs md:text-sm uppercase tracking-[0.18em] text-gray-500 mb-4">广州凡岛网络科技有限公司 · 在职项目成果</p>
+                <p class="text-xs md:text-sm uppercase tracking-[0.18em] text-gray-600 mb-4">广州凡岛网络科技有限公司 · 在职项目成果</p>
                 <div class="sub-header">日化产品营销</div>
                 <div class="box-container flex items-center justify-center">
                     <img src="kono-data.webp" width="1600" height="900" decoding="async" alt="日化品牌营销案例图" class="w-full rounded-lg shadow-sm">
@@ -1479,7 +1489,7 @@
             </div>
             
             <div class="mt-12 md:mt-20">
-                <p class="text-xs md:text-sm uppercase tracking-[0.18em] text-gray-500 mb-4">个人账号项目 · 自运营成果</p>
+                <p class="text-xs md:text-sm uppercase tracking-[0.18em] text-gray-600 mb-4">个人账号项目 · 自运营成果</p>
                 <div class="sub-header">小红书个人IP搭建</div>
                 <div class="box-container flex items-center justify-center overflow-hidden">
                     <img src="xhs-account.webp" width="1200" height="1046" decoding="async" alt="个人账号运营成果" class="w-full object-cover rounded-lg shadow-sm">
@@ -1490,7 +1500,7 @@
             </div>
 
             <div class="mt-12 md:mt-20">
-                <p class="text-xs md:text-sm uppercase tracking-[0.18em] text-gray-500 mb-4">腾讯集团市场与公关部 · 培养专项成果</p>
+                <p class="text-xs md:text-sm uppercase tracking-[0.18em] text-gray-600 mb-4">腾讯集团市场与公关部 · 培养专项成果</p>
                 <div class="sub-header">腾讯传播研习生培养专项「鹅创营」</div>
                 <p class="project-note">2026年04月 - 2026年06月 · 第3期学员。参与腾讯集团市场与公关部主办的传播研习生培养专项，完成 4 个传播策划实践课题作业，其中个人课题获评 A 级。</p>
 
@@ -1578,11 +1588,11 @@
                     <div class="flex flex-col gap-6 mt-6 md:mt-8">
                         <div class="border-l-4 border-orange-500 pl-4 md:pl-6">
                             <h3 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">18.4万+</h3>
-                            <p class="text-gray-500 uppercase tracking-widest text-xs md:text-sm">单条评论最高点赞数</p>
+                            <p class="text-gray-600 uppercase tracking-widest text-xs md:text-sm">单条评论最高点赞数</p>
                         </div>
                         <div class="border-l-4 border-orange-500 pl-4 md:pl-6">
                             <h3 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">21.9万+</h3>
-                            <p class="text-gray-500 uppercase tracking-widest text-xs md:text-sm">总互动杠杆撬动流量</p>
+                            <p class="text-gray-600 uppercase tracking-widest text-xs md:text-sm">总互动杠杆撬动流量</p>
                         </div>
                         <p class="text-gray-600 mt-4 leading-relaxed">
                             策略性占位与心智渗透。在抖音高优达人评论区，以神评论和前置埋点引导舆论，超额完成3个品牌千赞互动指标。将被动曝光完全转化为用户的自发认同与传播。
@@ -1620,28 +1630,28 @@
                         <span class="text-xl md:text-2xl font-bold">AI</span>
                     </div>
                     <h3 class="font-bold text-lg mb-2">AI 生产力</h3>
-                    <p class="text-gray-500">Codex<br>ChatGPT<br>Perplexity<br>Midjourney<br>Veo</p>
+                    <p class="text-gray-600">Codex<br>ChatGPT<br>Perplexity<br>Midjourney<br>Veo</p>
                 </div>
                 <div class="flex flex-col items-start sm:items-center text-left sm:text-center">
                     <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-gray-900 flex items-center justify-center mb-4 md:mb-6">
                         <span class="text-xl md:text-2xl font-bold">VD</span>
                     </div>
                     <h3 class="font-bold text-lg mb-2">视觉设计</h3>
-                    <p class="text-gray-500">Canva<br>Figma<br>Adobe Express<br>Recraft</p>
+                    <p class="text-gray-600">Canva<br>Figma<br>Adobe Express<br>Recraft</p>
                 </div>
                 <div class="flex flex-col items-start sm:items-center text-left sm:text-center">
                     <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-gray-900 flex items-center justify-center mb-4 md:mb-6">
                         <span class="text-xl md:text-2xl font-bold">VE</span>
                     </div>
                     <h3 class="font-bold text-lg mb-2">视频与图文</h3>
-                    <p class="text-gray-500">PR剪辑<br>剪映<br>Runway / Sora<br>秀米排版</p>
+                    <p class="text-gray-600">PR剪辑<br>剪映<br>Runway / Sora<br>秀米排版</p>
                 </div>
                 <div class="flex flex-col items-start sm:items-center text-left sm:text-center">
                     <div class="w-14 h-14 md:w-16 md:h-16 rounded-full border-2 border-gray-900 flex items-center justify-center mb-4 md:mb-6">
                         <span class="text-xl md:text-2xl font-bold">DA</span>
                     </div>
                     <h3 class="font-bold text-lg mb-2">数据分析</h3>
-                    <p class="text-gray-500">蝉妈妈<br>千瓜数据<br>Excel<br>Xmind</p>
+                    <p class="text-gray-600">蝉妈妈<br>千瓜数据<br>Excel<br>Xmind</p>
                 </div>
             </div>
         </section>
@@ -1926,7 +1936,7 @@
         new GrainientBackground(container, {
             color1: '#ff7a00',
             color2: '#fff4d8',
-            color3: '#c6b0ff',
+            color3: '#d6c8ff',
             timeSpeed: reduceMotion ? 0.0 : 1.08,
             colorBalance: -0.02,
             warpStrength: 1.08,
@@ -1940,9 +1950,9 @@
             grainAmount: 0.115,
             grainScale: 1.8,
             grainAnimated: !reduceMotion,
-            contrast: 1.18,
+            contrast: 1.08,
             gamma: 0.98,
-            saturation: 1.08,
+            saturation: 0.92,
             centerX: 0.04,
             centerY: -0.03,
             zoom: 0.97
